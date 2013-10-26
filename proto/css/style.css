@@ -19,6 +19,16 @@ nav {
 	border-bottom:solid 2px #999;
 	opacity:.6;
 }
+nav ul {
+	list-style:none;
+}
+nav ul li {
+	float:left;
+	padding: 0 15px;
+}
+nav ul li.active {
+	background:#F93;
+}
 #scrollPercentLabel {
 	position:fixed;
 	bottom:10px;

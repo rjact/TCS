@@ -31,16 +31,43 @@ $(window).load(function() {
 	
 	tl.append(new TweenLite(sec2, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec3, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page3', 1);
+	tl.addLabel('page3', 2.55);
 	
 	tl.append(new TweenLite(sec3, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec4, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page4', 1);
+	tl.addLabel('page4', 4.1);
 	
 	tl.append(new TweenLite(sec4, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec5, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page5', 1);
+	tl.addLabel('page5', 5.65);
 	
+	tlpg2 = new TimelineLite();
+	tlpg2.call(function() {
+		$('.navitem').removeClass('active');
+		$('#nav2').addClass('active');
+	})
+	tl.insert(tlpg2, 'page2');
+	
+	tlpg3 = new TimelineLite();
+	tlpg3.call(function() {
+		$('.navitem').removeClass('active');
+		$('#nav3').addClass('active');
+	})
+	tl.insert(tlpg3, 'page3');
+	
+	tlpg4 = new TimelineLite();
+	tlpg4.call(function() {
+		$('.navitem').removeClass('active');
+		$('#nav4').addClass('active');
+	})
+	tl.insert(tlpg4, 'page4');
+	
+	tlpg5 = new TimelineLite();
+	tlpg5.call(function() {
+		$('.navitem').removeClass('active');
+		$('#nav5').addClass('active');
+	})
+	tl.insert(tlpg5, 'page5');
 	
 
 	$(window).scroll(function(e){
