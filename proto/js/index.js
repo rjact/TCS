@@ -27,19 +27,19 @@ $(window).load(function() {
 	tl.append(new TweenLite(sec1, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec2, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
 	tl.append(new TweenLite(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page2', 1);
+	tl.addLabel('page2', 0.7);
 	
 	tl.append(new TweenLite(sec2, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec3, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page3', 2.55);
+	tl.addLabel('page3', 2.1);
 	
 	tl.append(new TweenLite(sec3, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec4, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page4', 4.1);
+	tl.addLabel('page4', 3.7);
 	
 	tl.append(new TweenLite(sec4, 1.55, {top:'-100%', ease:Linear.easeNone}));
 	tl.append(new TweenLite(sec5, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page5', 5.65);
+	tl.addLabel('page5', 5.3);
 	
 	tlpg2 = new TimelineLite();
 	tlpg2.call(function() {
@@ -77,7 +77,7 @@ $(window).load(function() {
 		var scrollPercent = (scrollTop) / (docHeight - winHeight);
 		var scrollPercentRounded = Math.round(scrollPercent*100)/100;
 
-		$('#scrollPercentLabel').html(scrollPercentRounded);
+		$('#scrollPercentLabel').html(scrollPercentRounded + ' / ' + tl.totalDuration());
 		
 		tl.progress( scrollPercent ).pause();
 	});
