@@ -1,0 +1,74 @@
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height:100%;
+}
+
+#fakeheight {
+	height: 2400px;
+	width: 1px;
+}
+nav {
+	z-index:30;
+	font-family: Impact;
+	font-size:36px;
+	position:absolute;
+	top:100%;
+	width:100%;
+	background:#ffffff;
+	border-bottom:solid 2px #999;
+	opacity:.6;
+}
+#scrollPercentLabel {
+	position:fixed;
+	bottom:10px;
+	left:0;
+	font-family: Impact;
+	font-size: 50px;
+	color: #2B2B2B;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
+	border-radius: 15px;
+	z-index:25;
+}
+section span {
+	font-family: Impact;
+	font-size: 50px;
+	color: #2B2B2B;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	position: absolute;
+	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
+	border-radius: 15px;
+	width: 400px;
+	height: 60px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -200px;
+}
+
+
+section.sec {
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:100%;
+}
+section#sec1 {
+	background:url(../images/pyramid.png);
+	top:0%
+}
+section#sec2 {
+	background:url(../images/escheresque_ste.png);
+}
+section#sec3 {
+	background:url(../images/norwegian_rose.png);
+}
+section#sec4 {
+	background:url(../images/low_contrast_linen.png);
+}
+section#sec5 {
+	background:url(../images/retina_wood.png);
+}
