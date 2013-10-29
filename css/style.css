@@ -10,6 +10,7 @@ html,body {
 	height: 2400px;
 	width: 1px;
 }
+/* navigation */
 nav {
 	z-index:30;
 	font-family: Impact;
@@ -34,7 +35,39 @@ nav ul li {
 nav ul li.active {
 	background:#F93;
 }
+/* end navigation */
 
+/* sections - general */
+section span { /* probably should remove this */
+	font-family: Impact;
+	font-size: 50px;
+	color: #2B2B2B;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	position: absolute;
+	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
+	border-radius: 15px;
+	width: 400px;
+	height: 60px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -200px;
+}
+
+
+section.sec {
+	width:100%;
+	max-width:960px;
+	min-height:600px;
+	position:fixed;
+	top:100%;
+	left:50%;
+	margin-left:-480px; /*works when width is 960, need media query for smaller*/
+	background-color:#e3e3e3;
+}
+
+/* end sections general */
 
 /* home page */
 div#intro-content {
@@ -52,7 +85,78 @@ div#intro-content h1 {
 	padding-top:12%;
 }
 
+/* work page */
+section#sec_work {
+	height:auto;
+}
+section#sec_work .sec_header {
+	background:url(../images/circle_convex.png) no-repeat center -120px;
+	height:25em;
+	background-size:contain;
+	text-align:center;
+}
+section#sec_work .sec_header h1 {
+	font-family: 'Montserrat', sans-serif;
+	color:#ffffff;
+	font-size:2em;
+	padding-top:1.4em;
+}
+section#sec_work .sec_header p {
+	font-family: 'Covered By Your Grace', cursive;
+	color:#ffffff;
+	font-size:26px;
+}
 
+div.work_examples {
+	width: 88%;
+	margin:0 auto;
+}
+div.work_example {
+	width:221px;
+	height:222px;
+	float:left;
+	margin:30px;
+	background-position:0 0;
+}
+div.work_example:hover {
+	background-position:-221px center !important;
+}
+div#work_example_01 {
+	background:url(../images/work/whitepages_t.png) no-repeat;
+}
+div#work_example_02 {
+	background:url(../images/work/whmh_t.png) no-repeat;
+}
+div#work_example_03 {
+	background:url(../images/work/yp_t.png) no-repeat;
+}
+div#work_example_04 {
+	background:url(../images/work/att_disney_t.png) no-repeat;
+}
+div#work_example_05 {
+	background:url(../images/work/myatt_t.png) no-repeat;
+}
+div#work_example_06 {
+	background:url(../images/work/mobitv_t.png) no-repeat;
+}
+div#work_example_07 {
+	background:url(../images/work/abctv_t.png) no-repeat;
+}
+div#work_example_08 {
+	background:url(../images/work/eppt_t.png) no-repeat;
+}
+div#work_example_09 {
+	background:url(../images/work/isis_t.png) no-repeat;
+}
+div#work_example_10 {
+	background:url(../images/work/z2_t.png) no-repeat;
+}
+div#work_example_11 {
+	background:url(../images/work/lavoz_t.png) no-repeat;
+}
+div#work_example_12 {
+	background:url(../images/work/attlatino_t.png) no-repeat;
+}
 
 
 
@@ -74,34 +178,7 @@ div#intro-content h1 {
 	border-radius: 15px;
 	z-index:25;
 }
-section span {
-	font-family: Impact;
-	font-size: 50px;
-	color: #2B2B2B;
-	background: rgba(255, 255, 255, 0.5);
-	padding: 20px;
-	position: absolute;
-	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
-	border-radius: 15px;
-	width: 400px;
-	height: 60px;
-	top: 50%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -200px;
-}
 
-
-section.sec {
-	width:100%;
-	max-width:960px;
-	height:100%;
-	position:fixed;
-	top:100%;
-	left:50%;
-	margin-left:-480px; /*works when width is 960, need media query for smaller*/
-	background-color:#e3e3e3;
-}
 section#sec_home {
 	background:#ffffff;
 	top:0%;
