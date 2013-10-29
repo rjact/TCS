@@ -47,6 +47,14 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
 
   <script src="js/index.js"></script>
-
+<script>
+	$(function() {
+		for(var i = 1; i <= 5; i++) {
+		$('#nav'+i).bind('click', function() {
+			tl.progress('page'+i);
+		});
+		}
+	});
+</script>
 </body>
 </html>

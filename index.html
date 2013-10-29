@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+	<script>
+		document.createElement("nav");
+		document.createElement("section");
+	</script>
+</head>
+
+<body>
+
+	<div id="page">
+		<div id="scrollPercentLabel">0</div>
+		<nav>
+			<ul>
+				<li class="navitem" id="nav1"><img src="images/nav_logo.png" /></li>
+				<li class="navitem" id="nav2">Work</li>
+				<li class="navitem" id="nav3">Services</li>
+				<li class="navitem" id="nav4">Clients</li>
+				<li class="navitem" id="nav5">Team</li>
+				<li class="navitem" id="nav6">Careers</li>
+				<li class="navitem" id="nav7">Contact</li>
+			</ul>
+		</nav>
+		<section class="sec" id="sec_home">
+			<div id="intro-content">
+			  <img src="images/tcs_headerlogo.png" id="header_logo">
+			  <img src="images/tcs_headerlogoWhite.png" id="header_logo_white">
+			  <h1>Ideas That Make A Difference<b>&trade;</b></h1>
+			</div>
+		</section>
+		<section class="sec" id="sec_work">
+			<span>Work</span>
+		</section>
+		<section class="sec" id="sec_services">
+			<span>Services</span>
+		</section>
+		<section class="sec" id="sec_clients">
+			<span>Clients</span>
+		</section>
+		<section class="sec" id="sec_team">
+			<span>Team</span>
+		</section>
+		<section class="sec" id="sec_careers">
+			<span>Careers</span>
+		</section>
+		<section class="sec" id="sec_contact">
+			<span>Contact</span>
+		</section>
+		
+		<div id="fakeheight"></div>
+	</div>
+
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
+
+  <script src="js/index.js"></script>
+<script>
+	$(function() {
+		for(var i = 1; i <= 5; i++) {
+		$('#nav'+i).bind('click', function() {
+			tl.progress('page'+i);
+		});
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	height:100%;
+}
+
+
+#fakeheight {
+	height: 2400px;
+	width: 1px;
+}
+nav {
+	z-index:30;
+	font-family: Impact;
+	font-size:36px;
+	position:absolute;
+	top:100%;
+	width:100%;
+	background:#002b45;
+}
+nav ul {
+	list-style:none;
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+}
+nav ul li {
+	float:left;
+	padding: 0 15px;
+	font-family: 'Covered By Your Grace', cursive;
+	color:#ffffff;
+}
+nav ul li.active {
+	background:#F93;
+}
+
+
+/* home page */
+div#intro-content {
+	position:relative;
+	top:40%;
+	left:35%;
+}
+img#header_logo, img#header_logo_white {
+	position:absolute;
+}
+img#header_logo_white {
+	opacity:0;
+}
+div#intro-content h1 {
+	padding-top:12%;
+}
+
+
+
+
+
+
+
+
+
+
+#scrollPercentLabel {
+	position:fixed;
+	bottom:10px;
+	left:0;
+	font-family: Impact;
+	font-size: 50px;
+	color: #2B2B2B;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
+	border-radius: 15px;
+	z-index:25;
+}
+section span {
+	font-family: Impact;
+	font-size: 50px;
+	color: #2B2B2B;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	position: absolute;
+	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
+	border-radius: 15px;
+	width: 400px;
+	height: 60px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -200px;
+}
+
+
+section.sec {
+	width:100%;
+	max-width:960px;
+	height:100%;
+	position:fixed;
+	top:100%;
+	left:50%;
+	margin-left:-480px; /*works when width is 960, need media query for smaller*/
+	background-color:#e3e3e3;
+}
+section#sec_home {
+	background:#ffffff;
+	top:0%;
+	max-width:none;
+	margin-left:0;
+	left:0;
+}
+section#sec_work {
+	background:url(../images/escheresque_ste.png);
+}
+section#sec_services {
+	background:url(../images/norwegian_rose.png);
+}
+section#sec_clients {
+	background:url(../images/low_contrast_linen.png);
+}
+section#sec_team {
+	background:url(../images/retina_wood.png);
+}

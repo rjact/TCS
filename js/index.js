@@ -1,5 +1,12 @@
 var tl;
 $(window).load(function() {
+	tlIntro = new TimelineLite();
+	tlIntro.delay(1).append([
+		TweenLite.to($('#sec_home'), 4, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home'), 1.5, {css: {color:'#ffffff'}}),
+		//TweenLite.to($('#header_logo'), 2, {opacity:0}, 4),
+		TweenLite.to($('#header_logo_white'), 1.5, {opacity: 1}, 4)]);
+		
 	tl = new TimelineLite({paused:true, onUpdate:timelineIsUpdating});	
 
 	//tl.to($('#sec2'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
@@ -7,11 +14,13 @@ $(window).load(function() {
 	//.to($('#sec4'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//.to($('#sec5'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//tl.staggerTo($('.sec'), 1, {css:{top:"0%"}, ease:Linear.easeNone}, 0.9),
-	var sec1 = $('#sec1');
-	var sec2 = $('#sec2');
-	var sec3 = $('#sec3');
-	var sec4 = $('#sec4');
-	var sec5 = $('#sec5');
+	var sec1 = $('#sec_home');
+	var sec2 = $('#sec_work');
+	var sec3 = $('#sec_services');
+	var sec4 = $('#sec_clients');
+	var sec5 = $('#sec_team');
+	var sec6 = $('#sec_careers');
+	var sec7 = $('#sec_contact');
 	var nav = $('nav');
 	/*
 	var tw2out = TweenLite.to(sec2, 1, {top:'-100%', ease:Linear.easeNone});
@@ -48,7 +57,14 @@ $(window).load(function() {
 		$('.navitem').removeClass('active');
 		$('#nav2').addClass('active');
 	})
+	
+	tlpg2a = new TimelineLite();
+	tlpg2a.call(function() {
+		$('.navitem').removeClass('active');
+		$('#nav2').addClass('active');
+	})
 	tl.insert(tlpg2, 'page2');
+	tl.insert(tlpg2a, 'page3-=.005');
 	
 	tlpg3 = new TimelineLite();
 	tlpg3.call(function() {
@@ -56,6 +72,7 @@ $(window).load(function() {
 		$('#nav3').addClass('active');
 	})
 	tl.insert(tlpg3, 'page3');
+	//tl.insert(tlpg3, 'page4-=.5');
 	
 	tlpg4 = new TimelineLite();
 	tlpg4.call(function() {
@@ -63,6 +80,7 @@ $(window).load(function() {
 		$('#nav4').addClass('active');
 	})
 	tl.insert(tlpg4, 'page4');
+	//tl.insert(tlpg4, 'page5-=.5');
 	
 	tlpg5 = new TimelineLite();
 	tlpg5.call(function() {
