@@ -32,8 +32,14 @@ $(document).ready(function() {
 		sections[CONTACT] = $('#sec_contact');
 		var nav = $('nav');
 		
+		tl = new TimelineLite();
+		tl.append(new TweenLite(sections[0], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
+		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
+		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+		
+		controller.addTween('#sec_home', tl);
 		for(i = 1; i < sections.length-1; i++) {
-			controller.pin(sections[i], 2000);
+			controller.pin(sections[i], 1000);
 		}
 		controller.triggerCheckAnim(true);
 		/*

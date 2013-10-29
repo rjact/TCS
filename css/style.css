@@ -38,6 +38,11 @@ nav ul li.active {
 /* end navigation */
 
 /* sections - general */
+div#sections {
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+}
 section span { /* probably should remove this */
 	font-family: Impact;
 	font-size: 50px;
@@ -70,6 +75,15 @@ section.sec {
 /* end sections general */
 
 /* home page */
+section#sec_home {
+	background:#ffffff;
+	top:0%;
+	max-width:none;
+	margin-left:0;
+	left:0;
+	height:100%;
+	position:fixed;
+}
 div#intro-content {
 	position:relative;
 	top:40%;
@@ -179,13 +193,6 @@ div#work_example_12 {
 	z-index:25;
 }
 
-section#sec_home {
-	background:#ffffff;
-	top:0%;
-	max-width:none;
-	margin-left:0;
-	left:0;
-}
 section#sec_work {
 	background:url(../images/escheresque_ste.png);
 }
