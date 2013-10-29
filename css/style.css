@@ -38,6 +38,11 @@ nav ul li.active {
 /* end navigation */
 
 /* sections - general */
+div#sections {
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+}
 section span { /* probably should remove this */
 	font-family: Impact;
 	font-size: 50px;
@@ -60,16 +65,25 @@ section.sec {
 	width:100%;
 	max-width:960px;
 	min-height:600px;
-	position:fixed;
-	top:100%;
-	left:50%;
-	margin-left:-480px; /*works when width is 960, need media query for smaller*/
+	//top:100%;
+	//left:50%;
+	//margin-left:-480px; /*works when width is 960, need media query for smaller*/
 	background-color:#e3e3e3;
+	//position:fixed;
 }
 
 /* end sections general */
 
 /* home page */
+section#sec_home {
+	background:#ffffff;
+	top:0%;
+	max-width:none;
+	margin-left:0;
+	left:0;
+	height:100%;
+	position:fixed;
+}
 div#intro-content {
 	position:relative;
 	top:40%;
@@ -179,13 +193,6 @@ div#work_example_12 {
 	z-index:25;
 }
 
-section#sec_home {
-	background:#ffffff;
-	top:0%;
-	max-width:none;
-	margin-left:0;
-	left:0;
-}
 section#sec_work {
 	background:url(../images/escheresque_ste.png);
 }
@@ -197,4 +204,26 @@ section#sec_clients {
 }
 section#sec_team {
 	background:url(../images/retina_wood.png);
+}
+
+/* generic stuff */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }

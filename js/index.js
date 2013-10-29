@@ -1,11 +1,69 @@
-var tl;
-$(window).load(function() {
-	tlIntro = new TimelineLite();
+
+$(document).ready(function() {
+	
+	tlIntro = new TimelineLite({onComplete:initScroller});
 	tlIntro.delay(1).append([
-		TweenLite.to($('#sec_home'), 4, {css: {backgroundColor: '#002B45'}}),
-		TweenLite.to($('#sec_home'), 1.5, {css: {color:'#ffffff'}}),
+		TweenLite.to($('#sec_home'), 1, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home'), .5, {css: {color:'#ffffff'}}),
 		//TweenLite.to($('#header_logo'), 2, {opacity:0}, 4),
 		TweenLite.to($('#header_logo_white'), 1.5, {opacity: 1}, 4)]);
+	
+	function initScroller() {
+		var controller = $.superscrollorama({
+			triggerAtCenter: false,
+			playoutAnimations: true
+		});
+		
+		controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
+		var HOME = 0,
+			WORK = 1,
+			SERVICES = 2,
+			CLIENTS = 3,
+			TEAM = 4,
+			CAREERS = 5,
+			CONTACT = 6
+		var sections = new Array();
+		sections[HOME] = $('#sec_home');
+		sections[WORK] = $('#sec_work');
+		sections[SERVICES] = $('#sec_services');
+		sections[CLIENTS] = $('#sec_clients');
+		sections[TEAM] = $('#sec_team');
+		sections[CAREERS] = $('#sec_careers');
+		sections[CONTACT] = $('#sec_contact');
+		var nav = $('nav');
+		
+		tl = new TimelineLite();
+		tl.append(new TweenLite(sections[0], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
+		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
+		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+		
+		controller.addTween('#sec_home', tl);
+		for(i = 1; i < sections.length-1; i++) {
+			controller.pin(sections[i], 1000);
+		}
+		controller.triggerCheckAnim(true);
+		/*
+		tl = new TimelineLite();
+		tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
+		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
+		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+		
+		controller.addTween('#sec_home', tl);
+		/*
+		for(i = 1; i < sections.length-1; i++) {
+			controller.addTween(sections[i].selector, (new TimelineLite()
+				.append(new TweenLite(sections[i], 1.55, {top:'-100%', ease:Linear.easeNone}))
+				.append(new TweenLite(sections[i+1], 1, {top:'0%', ease:Linear.easeNone}), -1.75)
+			), 1000)
+		}
+		*/
+	}
+	
+});
+/*
+var tl;
+$(window).load(function() {
+	
 		
 	tl = new TimelineLite({paused:true, onUpdate:timelineIsUpdating});	
 
@@ -14,31 +72,11 @@ $(window).load(function() {
 	//.to($('#sec4'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//.to($('#sec5'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//tl.staggerTo($('.sec'), 1, {css:{top:"0%"}, ease:Linear.easeNone}, 0.9),
-	var HOME = 0,
-		WORK = 1,
-		SERVICES = 2,
-		CLIENTS = 3,
-		TEAM = 4,
-		CAREERS = 5,
-		CONTACT = 6
-	var sections = new Array();
-	sections[HOME] = $('#sec_home');
-	sections[WORK] = $('#sec_work');
-	sections[SERVICES] = $('#sec_services');
-	sections[CLIENTS] = $('#sec_clients');
-	sections[TEAM] = $('#sec_team');
-	sections[CAREERS] = $('#sec_careers');
-	sections[CONTACT] = $('#sec_contact');
-	var nav = $('nav');
 
 	tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
 	tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
 	tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
 	tl.delay(.55);
-	for(i = 1; i < sections.length-1; i++) {
-		tl.append(new TweenLite(sections[i], 1.55, {top:'-100%', ease:Linear.easeNone}));
-		tl.append(new TweenLite(sections[i+1], 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	}
 	tl.addLabel('page1', 0);
 	tl.addLabel('page2', 0.77);
 	tl.addLabel('page3', 1.55);
@@ -131,6 +169,6 @@ $(window).load(function() {
 			tl.gotoAndStop(pos).pause();
 		});
 	//}
-*/
 
-});
+
+});*/
