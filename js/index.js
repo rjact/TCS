@@ -14,43 +14,36 @@ $(window).load(function() {
 	//.to($('#sec4'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//.to($('#sec5'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
 	//tl.staggerTo($('.sec'), 1, {css:{top:"0%"}, ease:Linear.easeNone}, 0.9),
-	var sec1 = $('#sec_home');
-	var sec2 = $('#sec_work');
-	var sec3 = $('#sec_services');
-	var sec4 = $('#sec_clients');
-	var sec5 = $('#sec_team');
-	var sec6 = $('#sec_careers');
-	var sec7 = $('#sec_contact');
+	var HOME = 0,
+		WORK = 1,
+		SERVICES = 2,
+		CLIENTS = 3,
+		TEAM = 4,
+		CAREERS = 5,
+		CONTACT = 6
+	var sections = new Array();
+	sections[HOME] = $('#sec_home');
+	sections[WORK] = $('#sec_work');
+	sections[SERVICES] = $('#sec_services');
+	sections[CLIENTS] = $('#sec_clients');
+	sections[TEAM] = $('#sec_team');
+	sections[CAREERS] = $('#sec_careers');
+	sections[CONTACT] = $('#sec_contact');
 	var nav = $('nav');
-	/*
-	var tw2out = TweenLite.to(sec2, 1, {top:'-100%', ease:Linear.easeNone});
-	var tw3in = TweenLite.to(sec3, 1, {top:'0%', ease:Linear.easeNone}, 0.9);
-	
-	var tw3out = TweenLite.to(sec3, 1, {top:'-100%', ease:Linear.easeNone});
-	var tw4in = TweenLite.to(sec4, 1, {top:'0%', ease:Linear.easeNone}, 0.9);
-	
-	var tw4out = TweenLite.to(sec4, 1, {top:'-100%', ease:Linear.easeNone});
-	var tw5in = TweenLite.to(sec5, 1, {top:'0%', ease:Linear.easeNone}, 0.9);
-	*/
-	
-	//tl.insertMultiple([TweenLite.to(sec1, 1, {top:'-100%', ease:Linear.easeNone}), TweenLite.to(sec2, 1, {top:'0%', ease:Linear.easeNone})], 0, 'start', -.2);
+
+	tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
+	tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
+	tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+	tl.delay(.55);
+	for(i = 1; i < sections.length-1; i++) {
+		tl.append(new TweenLite(sections[i], 1.55, {top:'-100%', ease:Linear.easeNone}));
+		tl.append(new TweenLite(sections[i+1], 1, {top:'0%', ease:Linear.easeNone}), -1.75);
+	}
 	tl.addLabel('page1', 0);
-	tl.append(new TweenLite(sec1, 1.55, {top:'-100%', ease:Linear.easeNone}));
-	tl.append(new TweenLite(sec2, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.append(new TweenLite(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page2', 0.7);
-	
-	tl.append(new TweenLite(sec2, 1.55, {top:'-100%', ease:Linear.easeNone}));
-	tl.append(new TweenLite(sec3, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page3', 2.1);
-	
-	tl.append(new TweenLite(sec3, 1.55, {top:'-100%', ease:Linear.easeNone}));
-	tl.append(new TweenLite(sec4, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page4', 3.7);
-	
-	tl.append(new TweenLite(sec4, 1.55, {top:'-100%', ease:Linear.easeNone}));
-	tl.append(new TweenLite(sec5, 1, {top:'0%', ease:Linear.easeNone}), -1.75);
-	tl.addLabel('page5', 5.3);
+	tl.addLabel('page2', 0.77);
+	tl.addLabel('page3', 1.55);
+	tl.addLabel('page4', 3.11);
+	tl.addLabel('page5', 4.68);
 	
 	tlpg2 = new TimelineLite();
 	tlpg2.call(function() {
@@ -58,13 +51,8 @@ $(window).load(function() {
 		$('#nav2').addClass('active');
 	})
 	
-	tlpg2a = new TimelineLite();
-	tlpg2a.call(function() {
-		$('.navitem').removeClass('active');
-		$('#nav2').addClass('active');
-	})
 	tl.insert(tlpg2, 'page2');
-	tl.insert(tlpg2a, 'page3-=.005');
+	tl.insert(tlpg2, 'page3-=.005');
 	
 	tlpg3 = new TimelineLite();
 	tlpg3.call(function() {
@@ -72,7 +60,7 @@ $(window).load(function() {
 		$('#nav3').addClass('active');
 	})
 	tl.insert(tlpg3, 'page3');
-	//tl.insert(tlpg3, 'page4-=.5');
+	tl.insert(tlpg3, 'page4-=.005');
 	
 	tlpg4 = new TimelineLite();
 	tlpg4.call(function() {
@@ -80,7 +68,7 @@ $(window).load(function() {
 		$('#nav4').addClass('active');
 	})
 	tl.insert(tlpg4, 'page4');
-	//tl.insert(tlpg4, 'page5-=.5');
+	tl.insert(tlpg4, 'page5-=.005');
 	
 	tlpg5 = new TimelineLite();
 	tlpg5.call(function() {
@@ -97,7 +85,7 @@ $(window).load(function() {
 		var scrollPercent = (scrollTop) / (docHeight - winHeight);
 		var scrollPercentRounded = Math.round(scrollPercent*100)/100;
 
-		$('#scrollPercentLabel').html(scrollPercentRounded + ' / ' + tl.totalDuration());
+		$('#scrollPercentLabel').html(Math.round((tl.rawTime()*100), 2) / 100  + ' / ' + Math.round((tl.totalDuration()*100), 2) / 100 + ' (' + Math.round((scrollPercentRounded*100), 2)  + '%)');
 		
 		tl.progress( scrollPercent ).pause();
 	});
@@ -109,7 +97,7 @@ $(window).load(function() {
 	for(i = 1; i <= 5; i++) {
 		$('#nav'+i).bind('click', function() {
 			var pos = tl.getLabelTime('page'+i)/tl.totalDuration();
-			console.log('going to page ' + i + ' at ' + pos);
+			//console.log('going to page ' + i + ' at ' + pos);
 			tl.gotoAndStop(pos).pause();
 		});
 	}
