@@ -1,4 +1,4 @@
-
+if(false) {
 $(document).ready(function() {
 	
 	tlIntro = new TimelineLite({onComplete:initScroller});
@@ -172,3 +172,4 @@ $(window).load(function() {
 
 
 });*/
+}
