@@ -1,18 +1,15 @@
 $(document).ready(function() {
 	
 	tlIntro = new TimelineLite({onComplete:initScroller});
-	tlIntro.delay(1).append([
-		TweenLite.to($('#sec_home'), 1.5, {css: {backgroundColor: '#002B45'}}),
-		TweenLite.to($('#sec_home h1'), 1.75, {css: {color: '#ffffff'}}),
-		TweenLite.delayedCall(1.15, function() {
+	tlIntro.delay(.2).append([
+		TweenLite.to($('#sec_home'), .2, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home h1'), .2, {css: {color: '#ffffff'}}),
+		TweenLite.delayedCall(.2, function() {
 			$('#intro-image').css('backgroundPosition', 'bottom center');	
 		})]);
 	
 	function initScroller() {
-		var controller = $.superscrollorama({
-			triggerAtCenter: false,
-			playoutAnimations: true
-		});
+		var controller = $.superscrollorama();
 		
 		//controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
 		var HOME = 0,
@@ -32,16 +29,23 @@ $(document).ready(function() {
 		sections[CONTACT] = $('#sec_contact');
 		var nav = $('nav');
 		
-		tl = new TimelineLite();
+		//tl = new TimelineLite();
 		//tl.append(new TweenLite(sections[HOME], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
 		//tl.insert(TweenLite.to(sections[WORK], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
-		tl.insert(TweenLite.to(nav, 1.5, {top:'0%', position:'fixed', ease:Linear.easeNone}));
+		//tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}));
 		
-		controller.addTween('#sec_home', tl);
+		//controller.addTween(100, tl);
+		//controller.addTween('nav', TweenLite.to( $('nav'), 1, {css:{top:'0%'}}), 1);
+		
+		controller.addTween($(window).height()+60, TweenMax.to($('nav'), 1, {css:{position:'fixed',top:'0%'}}),10);
+		//controller.addTween($(window).height()+60, TweenMax.call($('nav').css({position:'fixed', top:'0%'})));
+		
+		
+		//controller.addTween(200, TweenMax.from($('nav'), .5, {css:{top:'0%'}}), 2000);
 		for(i = 1; i < sections.length-1; i++) {
-			controller.pin(sections[i], 1000);
+			//controller.pin(sections[i], 1000);
 		}
-		controller.triggerCheckAnim(true);
+		//controller.triggerCheckAnim(true);
 		/*
 		tl = new TimelineLite();
 		tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
