@@ -33,6 +33,8 @@ $(document).ready(function() {
 		//stick nav bar to top
 		controller.addTween($(window).height()+60, TweenMax.to($('nav'), .001, {css:{position:'fixed',top:'0%'}}),1);
 		
+		
+		//work section
 		controller.pin(sections[WORK], 8000, {
 				anim: (new TimelineLite())
 					.call(function() {$('.navitem').removeClass('active');})
@@ -40,6 +42,40 @@ $(document).ready(function() {
 					.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {marginTop:'-420px'}))
 					.append(TweenMax.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100',opacity:0, ease:Expo.easeOut}, .5))
 		, offset: -60});
+		
+		//services page
+		controller.pin(sections[SERVICES], 8000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_services').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[SERVICES].find('.work_example'), 1, {y:'-100', scaleY:-1, alpha:0, ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//clients page
+		controller.pin(sections[CLIENTS], 8000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_clients').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[CLIENTS].find('.client_example'), 1, {x:'+1000', ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//team page
+		controller.pin(sections[TEAM], 8000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_team').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[TEAM].find('.work_example'), 1, {y:'+900', ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//team page
+		/* well, this is all f'ed up
+		controller.pin(sections[CAREERS], 3000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_careers').addClass('active');})
+					.append(TweenMax.from(sections[CAREERS].find('.sec_content'), 1, {alpha:0, ease:Expo.easeOut}, .5))
+		, offset: -60});
+		*/
 	}
 	
 });
