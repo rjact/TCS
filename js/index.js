@@ -37,7 +37,7 @@ $(document).ready(function() {
 		//controller.addTween(100, tl);
 		//controller.addTween('nav', TweenLite.to( $('nav'), 1, {css:{top:'0%'}}), 1);
 		
-		controller.addTween($(window).height()+60, TweenMax.to($('nav'), 1, {css:{position:'fixed',top:'0%'}}),10);
+		controller.addTween($(window).height()+60, TweenMax.to($('nav'), .001, {css:{position:'fixed',top:'0%'}}),10);
 		//controller.addTween($(window).height()+60, TweenMax.call($('nav').css({position:'fixed', top:'0%'})));
 		
 		
