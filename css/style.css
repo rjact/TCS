@@ -29,12 +29,12 @@ nav ul {
 }
 nav ul li {
 	float:left;
-	padding: 0 15px;
+	padding: 6px 15px;
 	font-family: 'Covered By Your Grace', cursive;
 	color:#ffffff;
 }
 nav ul li.active {
-	background:#F93;
+	background:#1d80be;
 }
 /* end navigation */
 
@@ -81,6 +81,7 @@ section#sec_home {
 	position:relative;
 	background:none;
 	max-width:none;
+	padding-bottom:0;
 }
 div#intro-content {
 	width:488px;
