@@ -33,7 +33,12 @@ $(document).ready(function() {
 		//stick nav bar to top
 		controller.addTween($(window).height()+60, TweenMax.to($('nav'), .001, {css:{position:'fixed',top:'0%'}}),1);
 		
-		
+		controller.pin(sections[WORK], 800, {
+				anim: (new TimelineLite())
+					.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {marginTop:'-420px'}))
+			//.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {y:'-400', delay:0, ease:Expo.easeOut}))
+					//.append(TweenLite.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100', opacity:0, ease:Expo.easeOut}, .11))
+		, offset: -60});
 	}
 	
 });
