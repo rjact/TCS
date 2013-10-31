@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	
 	tlIntro = new TimelineLite({onComplete:initScroller});
-	tlIntro.delay(.2).append([
-		TweenLite.to($('#sec_home'), .2, {css: {backgroundColor: '#002B45'}}),
-		TweenLite.to($('#sec_home h1'), .2, {css: {color: '#ffffff'}}),
-		TweenLite.delayedCall(.2, function() {
+	tlIntro.delay(1).append([
+		TweenLite.to($('#sec_home'), 1.5, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home h1'), 1.75, {css: {color: '#ffffff'}}),
+		TweenLite.delayedCall(1.5, function() {
 			$('#intro-image').css('backgroundPosition', 'bottom center');	
 		})]);
 	
@@ -33,11 +33,10 @@ $(document).ready(function() {
 		//stick nav bar to top
 		controller.addTween($(window).height()+60, TweenMax.to($('nav'), .001, {css:{position:'fixed',top:'0%'}}),1);
 		
-		controller.pin(sections[WORK], 800, {
+		controller.pin(sections[WORK], 8000, {
 				anim: (new TimelineLite())
 					.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {marginTop:'-420px'}))
-			//.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {y:'-400', delay:0, ease:Expo.easeOut}))
-					//.append(TweenLite.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100', opacity:0, ease:Expo.easeOut}, .11))
+					.append(TweenMax.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100',opacity:0, ease:Expo.easeOut}, .5))
 		, offset: -60});
 	}
 	
