@@ -5,7 +5,9 @@ html,body {
 	height:100%;
 }
 
-
+div#page {
+	height:100%;
+}
 #fakeheight {
 	height: 2400px;
 	width: 1px;
@@ -72,7 +74,40 @@ section.sec {
 
 /* end sections general */
 
-/* home page */
+/* intro page */
+section#sec_home {
+	width:100%;
+	height:100%;
+	position:relative;
+	background:none;
+	max-width:none;
+}
+div#intro-content {
+	width:488px;
+	height:244px;
+	margin-left:-244px;
+	margin-top: -122px;
+	position:absolute;
+	top:50%;
+	left:50%;
+}
+div#intro-image {
+	background:url(../images/logo_animation.png) no-repeat center top;
+	width:368px;
+	height:141px;
+	margin:0 auto;
+}
+div#intro-content h1 {
+	padding-top:5%;
+	font-family: 'Covered By Your Grace', cursive;
+	color:#002b45;
+	font-size:2.5em;
+}
+
+
+/* end intro page */
+
+/* home page 
 section#sec_home {
 	background:#ffffff;
 	top:0%;
@@ -96,7 +131,7 @@ img#header_logo_white {
 div#intro-content h1 {
 	padding-top:12%;
 }
-
+*/
 /* work page */
 section#sec_work {
 	height:auto;
@@ -112,7 +147,7 @@ section#sec_work .sec_header h1 {
 	font-family: 'Montserrat', sans-serif;
 	color:#ffffff;
 	font-size:2em;
-	padding-top:5.4em;
+	padding-top:6.3em;
 }
 section#sec_work .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
