@@ -1,12 +1,12 @@
-if(false) {
 $(document).ready(function() {
 	
 	tlIntro = new TimelineLite({onComplete:initScroller});
 	tlIntro.delay(1).append([
-		TweenLite.to($('#sec_home'), 1, {css: {backgroundColor: '#002B45'}}),
-		TweenLite.to($('#sec_home'), .5, {css: {color:'#ffffff'}}),
-		//TweenLite.to($('#header_logo'), 2, {opacity:0}, 4),
-		TweenLite.to($('#header_logo_white'), 1.5, {opacity: 1}, 4)]);
+		TweenLite.to($('#sec_home'), 1.5, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home h1'), 1.75, {css: {color: '#ffffff'}}),
+		TweenLite.delayedCall(1.15, function() {
+			$('#intro-image').css('backgroundPosition', 'bottom center');	
+		})]);
 	
 	function initScroller() {
 		var controller = $.superscrollorama({
@@ -14,7 +14,7 @@ $(document).ready(function() {
 			playoutAnimations: true
 		});
 		
-		controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
+		//controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
 		var HOME = 0,
 			WORK = 1,
 			SERVICES = 2,
@@ -33,9 +33,9 @@ $(document).ready(function() {
 		var nav = $('nav');
 		
 		tl = new TimelineLite();
-		tl.append(new TweenLite(sections[0], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
-		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
-		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+		//tl.append(new TweenLite(sections[HOME], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
+		//tl.insert(TweenLite.to(sections[WORK], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
+		tl.insert(TweenLite.to(nav, 1.5, {top:'0%', position:'fixed', ease:Linear.easeNone}));
 		
 		controller.addTween('#sec_home', tl);
 		for(i = 1; i < sections.length-1; i++) {
@@ -172,4 +172,3 @@ $(window).load(function() {
 
 
 });*/
-}
