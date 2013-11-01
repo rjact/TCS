@@ -1,20 +1,19 @@
-if(false) {
 $(document).ready(function() {
 	
 	tlIntro = new TimelineLite({onComplete:initScroller});
 	tlIntro.delay(1).append([
-		TweenLite.to($('#sec_home'), 1, {css: {backgroundColor: '#002B45'}}),
-		TweenLite.to($('#sec_home'), .5, {css: {color:'#ffffff'}}),
-		//TweenLite.to($('#header_logo'), 2, {opacity:0}, 4),
-		TweenLite.to($('#header_logo_white'), 1.5, {opacity: 1}, 4)]);
+		TweenLite.to($('#sec_home'), 1.5, {css: {backgroundColor: '#002B45'}}),
+		TweenLite.to($('#sec_home h1'), 1.75, {css: {color: '#ffffff'}}),
+		TweenLite.delayedCall(1.5, function() {
+			$('#intro-image').css('backgroundPosition', 'bottom center');	
+		})
+		
+		]);
 	
 	function initScroller() {
-		var controller = $.superscrollorama({
-			triggerAtCenter: false,
-			playoutAnimations: true
-		});
+		var controller = $.superscrollorama();
 		
-		controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
+		//controller.addTween('#sec_home', TweenLite.to($('#sec_home'), .5, {css:{opacity:.3}}));
 		var HOME = 0,
 			WORK = 1,
 			SERVICES = 2,
@@ -32,144 +31,57 @@ $(document).ready(function() {
 		sections[CONTACT] = $('#sec_contact');
 		var nav = $('nav');
 		
-		tl = new TimelineLite();
-		tl.append(new TweenLite(sections[0], 1, {top:'-100%', position:'absolute', ease:Linear.easeNone}), -1);
-		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
-		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
 		
-		controller.addTween('#sec_home', tl);
-		for(i = 1; i < sections.length-1; i++) {
-			controller.pin(sections[i], 1000);
-		}
-		controller.triggerCheckAnim(true);
-		/*
-		tl = new TimelineLite();
-		tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
-		tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
-		tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
+		//stick nav bar to top
+		controller.addTween($(window).height()+60, TweenMax.to($('nav'), .001, {css:{position:'fixed',top:'0%'}}),1);
 		
-		controller.addTween('#sec_home', tl);
-		/*
-		for(i = 1; i < sections.length-1; i++) {
-			controller.addTween(sections[i].selector, (new TimelineLite()
-				.append(new TweenLite(sections[i], 1.55, {top:'-100%', ease:Linear.easeNone}))
-				.append(new TweenLite(sections[i+1], 1, {top:'0%', ease:Linear.easeNone}), -1.75)
-			), 1000)
-		}
+		
+		//work section
+		controller.pin(sections[WORK], 2000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_work').addClass('active');})
+					.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {marginTop:'-420px'}, -500))
+					.append(TweenMax.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100',opacity:0, ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//services page
+		controller.pin(sections[SERVICES], 2000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_services').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[SERVICES].find('.services_example'), 1, {y:'-100', scaleY:-1, alpha:0, ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//clients page
+		controller.pin(sections[CLIENTS], 2000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_clients').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[CLIENTS].find('.client_example'), 1, {x:'+1000', ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//team page
+		controller.pin(sections[TEAM], 2000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_team').addClass('active');})
+					.append(TweenMax.staggerFrom(sections[TEAM].find('.team_example'), 1, {y:'+900', ease:Expo.easeOut}, .5))
+		, offset: -60});
+		
+		//team page
+		/* well, this is all f'ed up
+		controller.pin(sections[CAREERS], 3000, {
+				anim: (new TimelineLite())
+					.call(function() {$('.navitem').removeClass('active');})
+					.call(function() {$('#nav_careers').addClass('active');})
+					.append(TweenMax.from(sections[CAREERS].find('.sec_content'), 1, {alpha:0, ease:Expo.easeOut}, .5))
+		, offset: -60});
 		*/
+		
+		TweenLite.to(window, 5, {scrollTo:{y:$('#sec_work').position().top}})
+		TweenLite.to(window, 2.5, {scrollTo:{y:$('#sec_work').position().top+1500}})
 	}
 	
 });
-/*
-var tl;
-$(window).load(function() {
-	
-		
-	tl = new TimelineLite({paused:true, onUpdate:timelineIsUpdating});	
 
-	//tl.to($('#sec2'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
-	//.to($('#sec3'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
-	//.to($('#sec4'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
-	//.to($('#sec5'), 1, {css:{top:"0%"}, ease:Linear.easeNone})
-	//tl.staggerTo($('.sec'), 1, {css:{top:"0%"}, ease:Linear.easeNone}, 0.9),
-
-	tl.append(new TweenLite(sections[0], 1, {top:'-100%', ease:Linear.easeNone}), -1);
-	tl.insert(TweenLite.to(sections[1], 1, {top:'0%', ease:Linear.easeNone}), -1, -1, 'page1+=.001');
-	tl.insert(TweenLite.to(nav, 1, {top:'0%', position:'fixed', ease:Linear.easeNone}), -1, 'page1+=.001');
-	tl.delay(.55);
-	tl.addLabel('page1', 0);
-	tl.addLabel('page2', 0.77);
-	tl.addLabel('page3', 1.55);
-	tl.addLabel('page4', 3.11);
-	tl.addLabel('page5', 4.68);
-	
-	tlpg2 = new TimelineLite();
-	tlpg2.call(function() {
-		$('.navitem').removeClass('active');
-		$('#nav2').addClass('active');
-	})
-	
-	tl.insert(tlpg2, 'page2');
-	tl.insert(tlpg2, 'page3-=.005');
-	
-	tlpg3 = new TimelineLite();
-	tlpg3.call(function() {
-		$('.navitem').removeClass('active');
-		$('#nav3').addClass('active');
-	})
-	tl.insert(tlpg3, 'page3');
-	tl.insert(tlpg3, 'page4-=.005');
-	
-	tlpg4 = new TimelineLite();
-	tlpg4.call(function() {
-		$('.navitem').removeClass('active');
-		$('#nav4').addClass('active');
-	})
-	tl.insert(tlpg4, 'page4');
-	tl.insert(tlpg4, 'page5-=.005');
-	
-	tlpg5 = new TimelineLite();
-	tlpg5.call(function() {
-		$('.navitem').removeClass('active');
-		$('#nav5').addClass('active');
-	})
-	tl.insert(tlpg5, 'page5');
-	
-	
-
-	$(window).scroll(function(e){
-		var scrollTop = $(window).scrollTop();
-		var docHeight = $(document).height();
-		var winHeight = $(window).height();
-		var scrollPercent = (scrollTop) / (docHeight - winHeight);
-		var scrollPercentRounded = Math.round(scrollPercent*100)/100;
-
-		$('#scrollPercentLabel').html(Math.round((tl.rawTime()*100), 2) / 100  + ' / ' + Math.round((tl.totalDuration()*100), 2) / 100 + ' (' + Math.round((scrollPercentRounded*100), 2)  + '%)');
-		
-		tl.progress( scrollPercent ).pause();
-	});
-
-	function timelineIsUpdating() {
-		//console.log('timelineIsUpdating()');
-	}
-	var i;
-	for(i = 1; i <= 5; i++) {
-		$('#nav'+i).bind('click', function() {
-			var pos = tl.getLabelTime('page'+i)/tl.totalDuration();
-			//console.log('going to page ' + i + ' at ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-	}
-
-/*
-	//for(var i = 1; i <= 5; i++) {
-		$('#nav1').bind('click', function() {
-			var pos = tl.getLabelTime('page1')/tl.totalDuration();
-			console.log('going to ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-		$('#nav2').bind('click', function() {
-			var pos = tl.getLabelTime('page2')/tl.totalDuration();
-			console.log('going to ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-		$('#nav3').bind('click', function() {
-			var pos = tl.getLabelTime('page3')/tl.totalDuration();
-			console.log('going to ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-		$('#nav4').bind('click', function() {
-			var pos = tl.getLabelTime('page4')/tl.totalDuration();
-			console.log('going to ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-		$('#nav5').bind('click', function() {
-			var pos = tl.getLabelTime('page5')/tl.totalDuration();
-			console.log('going to ' + pos);
-			tl.gotoAndStop(pos).pause();
-		});
-	//}
-
-
-});*/
-}

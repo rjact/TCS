@@ -15,23 +15,21 @@
 <body>
 
 	<div id="page">
-		<div id="scrollPercentLabel">0</div>
 		<section class="sec" id="sec_home">
 			<div id="intro-content">
-			  <img src="images/tcs_headerlogo.png" id="header_logo">
-			  <img src="images/tcs_headerlogoWhite.png" id="header_logo_white">
-			  <h1>Ideas That Make A Difference<b>&trade;</b></h1>
+			  <div id="intro-image"></div>
+			  <h1>Ideas That Make A Difference<sup><sup><sup>&trade;</sup></sup></sup></h1>
 			</div>
 		</section>
 		<nav>
 			<ul>
-				<li class="navitem" id="nav1"><img src="images/logo_small.png" /></li>
-				<li class="navitem" id="nav2">Work</li>
-				<li class="navitem" id="nav3">Services</li>
-				<li class="navitem" id="nav4">Clients</li>
-				<li class="navitem" id="nav5">Team</li>
-				<li class="navitem" id="nav6">Careers</li>
-				<li class="navitem" id="nav7">Contact</li>
+				<li class="navitem" id="nav_home"><img src="images/logo_small.png" /></li>
+				<li class="navitem" id="nav_work">Work</li>
+				<li class="navitem" id="nav_services">Services</li>
+				<li class="navitem" id="nav_clients">Clients</li>
+				<li class="navitem" id="nav_team">Team</li>
+				<li class="navitem" id="nav_careers">Careers</li>
+				<li class="navitem" id="nav_contact">Contact</li>
 			</ul>
 		</nav>
 		<div id="sections">
@@ -59,17 +57,17 @@
 				<div class="sec_header">
 					<p>"A solid strategy will keep you in the game,<br/>a BIG idea will WIN it."</p>
 				</div>
-				<div class="work_examples clearfix">
-					<div class="work_example" id="work_example_01"></div>
-					<div class="work_example" id="work_example_02"></div>
-					<div class="work_example" id="work_example_03"></div>
-					<div class="work_example" id="work_example_04"></div>
-					<div class="work_example" id="work_example_05"></div>
-					<div class="work_example" id="work_example_06"></div>
-					<div class="work_example" id="work_example_07"></div>
-					<div class="work_example" id="work_example_08"></div>
-					<div class="work_example" id="work_example_09"></div>
-					<div class="work_example" id="work_example_10"></div>
+				<div class="services_examples clearfix">
+					<div class="services_example" id="services_example_01"></div>
+					<div class="services_example" id="services_example_02"></div>
+					<div class="services_example" id="services_example_03"></div>
+					<div class="services_example" id="services_example_04"></div>
+					<div class="services_example" id="services_example_05"></div>
+					<div class="services_example" id="services_example_06"></div>
+					<div class="services_example" id="services_example_07"></div>
+					<div class="services_example" id="services_example_08"></div>
+					<div class="services_example" id="services_example_09"></div>
+					<div class="services_example" id="services_example_10"></div>
 				</div>
 			</section>
 			<section class="sec" id="sec_clients">
@@ -95,15 +93,17 @@
 				<div class="sec_header">
 					<p>The Team That Makes a Difference</p>
 				</div>
-				<div class="work_examples clearfix">
-					<div class="work_example" id="work_example_01"></div>
-					<div class="work_example" id="work_example_02"></div>
-					<div class="work_example" id="work_example_03"></div>
-					<div class="work_example" id="work_example_04"></div>
-					<div class="work_example" id="work_example_05"></div>
-					<div class="work_example" id="work_example_06"></div>
-					<div class="work_example" id="work_example_07"></div>
-					<div class="work_example" id="work_example_08"></div>
+				<div class="team_examples clearfix">
+					<div class="team_example" id="team_example_01"></div>
+					<div class="team_example" id="team_example_02"></div>
+					<div class="team_example" id="team_example_03"></div>
+					<div class="team_example" id="team_example_04"></div>
+					<div class="team_example" id="team_example_05"></div>
+					<div class="team_example" id="team_example_06"></div>
+					<div class="team_example" id="team_example_07"></div>
+					<div class="team_example" id="team_example_08"></div>
+					<div class="team_example" id="team_example_09"></div>
+					<div class="team_example" id="team_example_10"></div>
 				</div>
 			</section>
 			<section class="sec" id="sec_careers">
@@ -173,7 +173,7 @@
 
   <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/plugins/ScrollToPlugin.min.js"></script>
   <script src="js/jquery.superscrollorama.js"></script>
   <script src="js/index.js"></script>
 <script>

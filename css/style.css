@@ -5,7 +5,9 @@ html,body {
 	height:100%;
 }
 
-
+div#page {
+	height:100%;
+}
 #fakeheight {
 	height: 2400px;
 	width: 1px;
@@ -18,6 +20,7 @@ nav {
 	width:100%;
 	background:#002b45;
 	height:60px;
+	position:absolute;
 }
 nav ul {
 	width:100%;
@@ -26,12 +29,13 @@ nav ul {
 }
 nav ul li {
 	float:left;
-	padding: 0 15px;
+	padding: 6px 15px;
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 }
 nav ul li.active {
-	background:#F93;
+	background:#1d80be;
 }
 /* end navigation */
 
@@ -67,12 +71,46 @@ section.sec {
 	position:relative;
 	overflow:hidden;
 	padding-bottom:100px;
-	border-bottom:solid 4px #636363; /* just for testing... */
 }
 
 /* end sections general */
 
-/* home page */
+/* intro page */
+section#sec_home {
+	width:100%;
+	height:100%;
+	position:relative;
+	background:none;
+	max-width:none;
+	padding-bottom:0;
+}
+div#intro-content {
+	width:488px;
+	height:244px;
+	margin-left:-244px;
+	margin-top: -122px;
+	position:absolute;
+	top:50%;
+	left:50%;
+}
+div#intro-image {
+	background:url(../images/logo_animation.png) no-repeat center top;
+	width:368px;
+	height:141px;
+	margin:0 auto;
+}
+div#intro-content h1 {
+	padding-top:5%;
+	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
+	color:#002b45;
+	font-size:2.5em;
+}
+
+
+/* end intro page */
+
+/* home page 
 section#sec_home {
 	background:#ffffff;
 	top:0%;
@@ -96,7 +134,7 @@ img#header_logo_white {
 div#intro-content h1 {
 	padding-top:12%;
 }
-
+*/
 /* work page */
 section#sec_work {
 	height:auto;
@@ -112,10 +150,11 @@ section#sec_work .sec_header h1 {
 	font-family: 'Montserrat', sans-serif;
 	color:#ffffff;
 	font-size:2em;
-	padding-top:5.4em;
+	padding-top:6.3em;
 }
 section#sec_work .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:26px;
 }
@@ -132,7 +171,7 @@ div.work_example {
 	background-position:0 0;
 }
 div.work_example:hover {
-	background-position:-221px center !important;
+	//background-position:-221px center !important;
 }
 div#work_example_01 {
 	background:url(../images/work/whitepages_t.png) no-repeat;
@@ -184,16 +223,17 @@ section#sec_services .sec_header {
 
 section#sec_services .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:5.4em;
 }
 
-section#sec_services div.work_examples {
+section#sec_services div.services_examples {
 	text-align:center;
 	margin-top:-96px;
 }
-section#sec_services div.work_example {
+section#sec_services div.services_example {
 	width:221px;
 	height:222px;
 	float:none;
@@ -201,6 +241,41 @@ section#sec_services div.work_example {
 	background-position:0 0;
 	display:inline-block;
 }
+
+div.services_example:hover {
+	background-position:-221px center !important;
+}
+div#services_example_01 {
+	background:url(../images/services/analytics_t.png) no-repeat;
+}
+div#services_example_02 {
+	background:url(../images/services/creative_t.png) no-repeat;
+}
+div#services_example_03 {
+	background:url(../images/services/digital_t.png) no-repeat;
+}
+div#services_example_04 {
+	background:url(../images/services/experiential_t.png) no-repeat;
+}
+div#services_example_05 {
+	background:url(../images/services/ideas_t.png) no-repeat;
+}
+div#services_example_06 {
+	background:url(../images/services/igm_t.png) no-repeat;
+}
+div#services_example_07 {
+	background:url(../images/services/mobile_t.png) no-repeat;
+}
+div#services_example_08 {
+	background:url(../images/services/promotion_t.png) no-repeat;
+}
+div#services_example_09 {
+	background:url(../images/services/social-media_t.png) no-repeat;
+}
+div#services_example_10 {
+	background:url(../images/services/technology_t.png) no-repeat;
+}
+
 
 /* end services section */
 
@@ -215,6 +290,7 @@ section#sec_clients .sec_header {
 
 section#sec_clients .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:8.7em;
@@ -286,22 +362,57 @@ section#sec_team .sec_header {
 
 section#sec_team .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:7.6em;
 }
 
-section#sec_team div.work_examples {
+section#sec_team div.team_examples {
 	text-align:center;
 	margin-top:-96px;
 }
-section#sec_team div.work_example {
+section#sec_team div.team_example {
 	width:221px;
 	height:222px;
 	float:none;
 	margin:28px;
 	background-position:0 0;
 	display:inline-block;
+}
+
+div.team_example:hover {
+	background-position:-221px center !important;
+}
+div#team_example_01 {
+	background:url(../images/team/stephenJ_t.png) no-repeat;
+}
+div#team_example_02 {
+	background:url(../images/team/joeP_t.png) no-repeat;
+}
+div#team_example_03 {
+	background:url(../images/team/tracyG_t.png) no-repeat;
+}
+div#team_example_04 {
+	background:url(../images/team/stephenM_t.png) no-repeat;
+}
+div#team_example_05 {
+	background:url(../images/team/jakeP_t.png) no-repeat;
+}
+div#team_example_06 {
+	background:url(../images/team/tatianaD_t.png) no-repeat;
+}
+div#team_example_07 {
+	background:url(../images/team/paolaS_t.png) no-repeat;
+}
+div#team_example_08 {
+	background:url(../images/team/ericB_t.png) no-repeat;
+}
+div#team_example_09 {
+	background:url(../images/team/patrickF_t.png) no-repeat;
+}
+div#team_example_10 {
+	background:url(../images/team/jasonS_t.png) no-repeat;
 }
 
 
@@ -318,6 +429,7 @@ section#sec_careers .sec_header {
 
 section#sec_careers .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:8.5em;
@@ -326,6 +438,7 @@ section#sec_careers .sec_header p {
 section#sec_careers .sec_content {
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
 	font-size:18px;
 }
 section#sec_careers .sec_content p {
@@ -346,6 +459,7 @@ section#sec_careers .sec_content ul li {
 /* contact section */
 section#sec_contact {
 	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 section#sec_contact .sec_header {
 	background:url(../images/circle_concave.png) no-repeat center top;
@@ -357,6 +471,7 @@ section#sec_contact .sec_header {
 
 section#sec_contact .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:7.6em;
@@ -441,6 +556,7 @@ section#sec_contact .sec_right ul li textarea {
 section#sec_contact .sec_right ul li input[type=submit] {
 	background:#1d80be;
 	font-family: 'Covered By Your Grace', cursive;
+	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	width:96px;
 	font-size:1.5em;
