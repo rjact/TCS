@@ -43,7 +43,7 @@ $(document).ready(function() {
 					.call(function() {$('#nav_work').addClass('active');})
 					.append(TweenLite.from(sections[WORK].find('.sec_header'), 1, {marginTop:'-420px'}, -500))
 					.append(TweenMax.staggerFrom(sections[WORK].find('.work_example'), 1, {y:'-100',opacity:0, ease:Expo.easeOut}, .5))
-		, offset: -60});
+		, offset: -100});
 		
 		//services page
 		controller.pin(sections[SERVICES], 2000, {
@@ -51,7 +51,7 @@ $(document).ready(function() {
 					.call(function() {$('.navitem').removeClass('active');})
 					.call(function() {$('#nav_services').addClass('active');})
 					.append(TweenMax.staggerFrom(sections[SERVICES].find('.services_example'), 1, {y:'-100', scaleY:-1, alpha:0, ease:Expo.easeOut}, .5))
-		, offset: -60});
+		, offset: -100});
 		
 		//clients page
 		controller.pin(sections[CLIENTS], 2000, {
@@ -59,7 +59,7 @@ $(document).ready(function() {
 					.call(function() {$('.navitem').removeClass('active');})
 					.call(function() {$('#nav_clients').addClass('active');})
 					.append(TweenMax.staggerFrom(sections[CLIENTS].find('.client_example'), 1, {x:'+1000', ease:Expo.easeOut}, .5))
-		, offset: -60});
+		, offset: -100});
 		
 		//team page
 		controller.pin(sections[TEAM], 2000, {
@@ -67,7 +67,7 @@ $(document).ready(function() {
 					.call(function() {$('.navitem').removeClass('active');})
 					.call(function() {$('#nav_team').addClass('active');})
 					.append(TweenMax.staggerFrom(sections[TEAM].find('.team_example'), 1, {y:'+900', ease:Expo.easeOut}, .5))
-		, offset: -60});
+		, offset: -100});
 		
 		//team page
 		/* well, this is all f'ed up

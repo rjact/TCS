@@ -29,13 +29,30 @@ nav ul {
 }
 nav ul li {
 	float:left;
-	padding: 6px 15px;
+	padding: 6px 22px;
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 }
 nav ul li.active {
 	background:#1d80be;
+}
+nav div#tagline_holder {
+	background:#ffffff;
+	height:40px;
+	margin-top:60px;
+}
+nav div#tagline_holder div#tagline {
+	font-family: 'Covered By Your Grace', cursive;
+	width:100%;
+	max-width:1024px;
+	margin:0 auto;
+	white-space:nowrap;
+	color:#002b45;
+	font-size:26px;
+	line-height:15px;
+	clear:both;
+	text-align:right;
 }
 /* end navigation */
 
