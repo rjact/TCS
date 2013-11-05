@@ -18,18 +18,19 @@ nav {
 	font-family: Impact;
 	font-size:36px;
 	width:100%;
-	background:#002b45;
 	height:60px;
 	position:absolute;
+	/*margin-top:40px;*/
 }
 nav ul {
 	width:100%;
-	max-width:960px;
+	max-width:1024px;
 	margin:0 auto;
+	background:#002b45;
 }
 nav ul li {
 	float:left;
-	padding: 6px 22px;
+	padding: 9px 27px;
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -40,19 +41,20 @@ nav ul li.active {
 nav div#tagline_holder {
 	background:#ffffff;
 	height:40px;
-	margin-top:60px;
+	position:relative;
 }
 nav div#tagline_holder div#tagline {
 	font-family: 'Covered By Your Grace', cursive;
 	width:100%;
-	max-width:1024px;
+	max-width:960px;
 	margin:0 auto;
 	white-space:nowrap;
-	color:#002b45;
-	font-size:26px;
-	line-height:15px;
+	color:#1d80be;
+	font-size:22px;
+	line-height:40px;
 	clear:both;
 	text-align:right;
+	-webkit-font-smoothing: antialiased;
 }
 /* end navigation */
 
@@ -153,7 +155,7 @@ div#intro-content h1 {
 }
 */
 /* work page */
-section#sec_work {
+section#sec_work, section#sec_services, section#sec_clients, section#sec_team, section#sec_careers, section#sec_contact {
 	height:auto;
 }
 section#sec_work .sec_header {
@@ -243,7 +245,7 @@ section#sec_services .sec_header p {
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
-	padding-top:5.4em;
+	padding-top:6.8em;
 }
 
 section#sec_services div.services_examples {
@@ -374,7 +376,7 @@ section#sec_team .sec_header {
 	height:31em;
 	background-size:contain;
 	text-align:center;
-	margin-top:-15em;
+	margin-top:-13.7em;
 }
 
 section#sec_team .sec_header p {
@@ -382,7 +384,7 @@ section#sec_team .sec_header p {
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
-	padding-top:7.6em;
+	padding-top:8.1em;
 }
 
 section#sec_team div.team_examples {
