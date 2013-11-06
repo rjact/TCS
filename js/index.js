@@ -1,3 +1,4 @@
+if(false) {
 var PIN_DURATION = 2000
 $(document).ready(function () {
 
@@ -97,8 +98,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_work').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_work').position().top + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_work').addClass('active');
+		});
 	});
 	$('#nav_services').on('click', function () {
 		var tl = new TimelineLite();
@@ -106,8 +109,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_services').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_services').position().top + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_services').addClass('active');
+		});
 	});
 	$('#nav_clients').on('click', function () {
 		var scrollExtra = -100;
@@ -119,8 +124,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_clients').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_clients').position().top + scrollExtra + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_clients').addClass('active');
+		});
 	});
 	$('#nav_team').on('click', function () {
 		var scrollExtra = -100;
@@ -135,8 +142,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_team').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_team').position().top + scrollExtra + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_team').addClass('active');
+		});
 	});
 	$('#nav_careers').on('click', function () {
 		var scrollExtra = -100;
@@ -154,8 +163,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_careers').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_careers').position().top + scrollExtra + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_careers').addClass('active');
+		});
 	});
 	$('#nav_contact').on('click', function () {
 		var scrollExtra = -100;
@@ -176,10 +187,13 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_contact').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra + (PIN_DURATION * .75)} });
 		}
-		$('.navitem').removeClass('active');
-		$(this).addClass('active');
+		tl.call(function() {
+			$('.navitem').removeClass('active');
+			$('#nav_contact').addClass('active');
+		});
 	});
 
 
 });
 
+}

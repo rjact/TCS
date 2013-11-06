@@ -91,7 +91,9 @@ section.sec {
 	overflow:hidden;
 	padding-bottom:100px;
 }
-
+section#contact {
+	background:#e3e3e3 url(../images/footer_tall.jpg) no-repeat bottom center;
+}
 /* end sections general */
 
 /* intro page */
@@ -479,6 +481,8 @@ section#sec_careers .sec_content ul li {
 section#sec_contact {
 	font-family: 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
+	margin-bottom:25px;
+	background:#e3e3e3;
 }
 section#sec_contact .sec_header {
 	background:url(../images/circle_concave.png) no-repeat center top;
@@ -581,6 +585,41 @@ section#sec_contact .sec_right ul li input[type=submit] {
 	font-size:1.5em;
 }
 
+div.sec_footer {
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	background:url(../images/footer_tall.jpg) no-repeat bottom center;
+	height:140px;
+} 
+ul#social_links {
+	float:left;
+	margin-left:8%;
+	width:15%;
+	margin-top:65px;
+}
+ul#social_links li{
+	float:left;
+	margin-right:12px;
+}
+div.copyright {
+	text-align:center;
+	float:left;
+	color:#ffffff;
+	line-height:38px;
+	font-size:0.8em;
+	width:41%;
+	margin-top:65px;
+}
+ul#assoc_links {
+	float:right;
+	margin-right:8%;
+	width:27%;
+	margin-top:57px;
+}
+ul#assoc_links li {
+	float:left;
+}
 
 
 /*  end contact section */
