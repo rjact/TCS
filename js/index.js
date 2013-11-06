@@ -1,4 +1,4 @@
-if(false) {
+
 var PIN_DURATION = 2000
 $(document).ready(function () {
 
@@ -85,9 +85,26 @@ $(document).ready(function () {
 					.call(function () { $('.navitem').removeClass('active'); })
 					.call(function () { $('#nav_careers').addClass('active'); })
 					.append(TweenMax.from(sections[CAREERS].find('.sec_content'), 1, { alpha: 0, ease: Expo.easeOut }, .5))
-		, offset: -60
+		, offset: -100
 		});
 
+//for some reason, this section is now preventing the initial autoscroll to work.  happened when i added .append new TimelineLite....
+/*
+		//contact page
+		controller.pin(sections[CONTACT], PIN_DURATION, {
+			anim: (new TimelineLite())
+					.call(function () { $('.navitem').removeClass('active'); })
+					.call(function () { $('#nav_contact').addClass('active'); })
+					.append((new TimelineLite()).append([
+						TweenLite.staggerFrom(sections[CONTACT].find('.sec_col'), 1, { y: '+600', ease: Expo.easeOut }, .5),
+						TweenLite.to($('.sec_footer'), 1, {css: {top: $(window).height()-$('.sec_footer').height()-100}}, 140)
+					]))
+					.call(function() {console.log('shortn\'n');sections[CONTACT].css('height', $(window).height() - 100);})
+					//.call(function() { controller.removePin(sections[CONTACT]);})
+		, offset: -100
+		});
+*/
+		//controller.addTween($(window).height(), TweenMax.to($('#sec_contact'), .001, { css: { position: 'fixed'} }), 1);
 		TweenLite.to(window, 5, { scrollTo: { y: $('#sec_work').position().top} })
 		TweenLite.to(window, 2.5, { scrollTo: { y: $('#sec_work').position().top + 1500} })
 	}
@@ -173,7 +190,6 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_services').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
-		var tl = new TimelineLite();
 		if ($(document).scrollTop() < $('#sec_clients').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
@@ -183,6 +199,7 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_careers').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
+		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra} });
 		if ($(document).scrollTop() < $('#sec_contact').position().top) {
 			tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra + (PIN_DURATION * .75)} });
@@ -196,4 +213,3 @@ $(document).ready(function () {
 
 });
 
-}
