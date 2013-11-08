@@ -116,6 +116,16 @@ section#contact {
 	font-size:1.4em;
 }
 
+.close_lbx {
+	background:url(../images/close.png) no-repeat center center;
+	width:25px;
+	height:24px;
+	margin:35px auto 0px;
+	position:absolute;
+	left:0;
+	right:0;
+	cursor:pointer;
+}
 .work_example .overlay {
 	display:none;
 }
@@ -656,6 +666,7 @@ html[xmlns] .clearfix {
 	top:0;
 	opacity:0.8;
   	filter:alpha(opacity=80); /* For IE8 and earlier */
+	overflow-y:scroll;
 }
 
 /* below should be just for testing */

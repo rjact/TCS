@@ -1,7 +1,7 @@
 
 var PIN_DURATION = 2000
 $(document).ready(function () {
-
+	$(document).scrollTop(0);
 	tlIntro = new TimelineLite({ onComplete: initScroller });
 	tlIntro.delay(1).append([
 		TweenLite.to($('#sec_home'), 1.5, { css: { backgroundColor: '#002B45'} }),
@@ -113,9 +113,9 @@ $(document).ready(function () {
 	}
 
 	$('.work_example').on('mouseenter', function() {
-		$(this).find('.overlay').show();
+		$(this).find('.overlay').fadeIn();
 	}).on('mouseleave', function() {
-		$(this).find('.overlay').hide();
+		$(this).find('.overlay').fadeOut();
 	});
 	var flipDepth = -500,
 			flipDur = .8
@@ -258,14 +258,24 @@ $(document).ready(function () {
 	});
 
 
-	$('.work_example').on('click', function() {
+	$('.example').on('click', function() {
 		$('#overlay').show().on('click', function() { hideLightbox(); });
-		$('body').css({'height': '0','overflow-y': 'scroll'});
+		$('body').css({'overflow': 'hidden'});
 		///$('nav').css('margin-left', '-8px'); //because,wtf
 		var contents = '<img src="images/work/' + $(this).data('large') + '.png"/>';
-		$('<div id="lightbox"></div>').css({position:'absolute', 'z-index': 5000, width:800, height:800}).html(contents).appendTo('body').center();
-		TweenLite.from($('#lightbox'), .6, {css: {scaleY: 0}});
+		$('<div id="lightbox"><div class="close_lbx"></div></div>').css({position:'absolute', 'z-index': 5000, width:800, height:800}).append(contents).appendTo('body').center();
+		if($(this).data('text') != '') {
+			var contents = $(this).data('text');
+			$('#lightbox').append($('<p></p>').html(contents));
+		}
+		//TweenLite.from($('#lightbox'), .6, {css: {scaleY: 0}});
+		$('#lightbox').delegate('.close_lbx', 'click', function() {
+			hideLightbox();
+		});
 	});
+	
+	$('.fancybox').fancybox();
+	
 });
 
 function hideLightbox() {
@@ -279,9 +289,9 @@ function hideLightbox() {
 	]);
 	*/
 	//$('nav').css('margin-left', '0px'); //because,wtf
+		$('#overlay').hide();
 	$('#lightbox').fadeOut(function() {
 		$(this).remove();
-		$('#overlay').hide();
 	});
 	$('body').css('overflow', 'visible');
 	
@@ -294,3 +304,87 @@ jQuery.fn.center = function () {
                                                 $(window).scrollLeft()) + "px");
     return this;
 }
+
+$(function(){
+
+    //ini plugin
+
+    jQuery.event.freezeEvents = function(elem) {
+
+    	if (typeof(jQuery._funcFreeze)=="undefined")
+    		jQuery._funcFreeze = [];
+
+    	if (typeof(jQuery._funcNull)=="undefined")
+    		jQuery._funcNull = function(){ };
+
+    	// don't do events on text and comment nodes
+    	if ( elem.nodeType == 3 || elem.nodeType == 8 )
+    		return;
+
+    	var events = jQuery.data(elem, "events"), ret, index;
+
+    	if ( events ) {
+
+    		for ( var type in events )
+    		{
+    			if ( events[type] ) {
+
+    				var namespaces = type.split(".");
+    				type = namespaces.shift();
+    				var namespace = RegExp("(^|\\.)" + namespaces.slice().sort().join(".*\\.") + "(\\.|$)");
+
+    				for ( var handle in events[type] )
+    					if ( namespace.test(events[type][handle].type) ){
+    						if (events[type][handle] != jQuery._funcNull){
+    							jQuery._funcFreeze["events_freeze_" + handle] = events[type][handle];
+    							events[type][handle] = jQuery._funcNull;
+    						}
+    					}
+    			}
+
+    		}
+    	}
+    }
+
+    jQuery.event.unFreezeEvents = function(elem) {
+
+    	// don't do events on text and comment nodes
+    	if ( elem.nodeType == 3 || elem.nodeType == 8 )
+    		return;
+
+    	var events = jQuery.data(elem, "events"), ret, index;
+
+    	if ( events ) {
+
+    		for ( var type in events )
+    		{
+    			if ( events[type] ) {
+
+    				var namespaces = type.split(".");
+    				type = namespaces.shift();
+
+    				for ( var handle in events[type] )
+    					if (events[type][handle]==jQuery._funcNull)
+    						events[type][handle] = jQuery._funcFreeze["events_freeze_" + handle];
+
+    			}
+    		}
+    	}
+    }
+
+    jQuery.fn.freezeEvents = function() {
+
+    	return this.each(function(){
+    		jQuery.event.freezeEvents(this);
+    	});
+
+    };
+
+    jQuery.fn.unFreezeEvents = function() {
+
+    	return this.each(function(){
+    		jQuery.event.unFreezeEvents(this);
+    	});
+
+    };
+});
