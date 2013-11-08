@@ -69,7 +69,7 @@
 		function resetPinObj (pinObj) {
 			pinObj.el.css('position', pinObj.origPositioning.pos);
 			pinObj.el.css('top', pinObj.origPositioning.top);
-			pinObj.el.css('left', pinObj.origPositioning.left);
+			//pinObj.el.css('left', pinObj.origPositioning.left);
 		}
 		// set a Tween Progress (use totalProgress for TweenMax and TimelineMax to include repeats)
 		function setTweenProgress(tween, progress) {
@@ -198,7 +198,7 @@
 						// change to fixed position
 						pinObj.fixedPositioning = {
 							top: superscrollorama.settings.isVertical ? -pinObj.offset : pinObjSpacerOffset.top,
-							left: superscrollorama.settings.isVertical ? pinObjSpacerOffset.left : -pinObj.offset
+							//left: superscrollorama.settings.isVertical ? pinObjSpacerOffset.left : -pinObj.offset
 						};
 						el.css('position','fixed');
 						el.css('top', pinObj.fixedPositioning.top);
