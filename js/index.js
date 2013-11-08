@@ -1,4 +1,4 @@
-if(false) {
+
 var PIN_DURATION = 2000
 $(document).ready(function () {
 
@@ -85,13 +85,77 @@ $(document).ready(function () {
 					.call(function () { $('.navitem').removeClass('active'); })
 					.call(function () { $('#nav_careers').addClass('active'); })
 					.append(TweenMax.from(sections[CAREERS].find('.sec_content'), 1, { alpha: 0, ease: Expo.easeOut }, .5))
-		, offset: -60
+		, offset: -100
 		});
 
+		//contact page
+		controller.pin(sections[CONTACT], PIN_DURATION, {
+			anim: (new TimelineLite())
+					.call(function () { $('.navitem').removeClass('active'); })
+					.call(function () { $('#nav_contact').addClass('active'); })
+					.append((new TimelineLite()).append([
+						TweenMax.staggerFrom(sections[CONTACT].find('.sec_col'), 1, { y: '+600', ease: Expo.easeOut }, .4),
+						TweenLite.to($('.sec_footer'), 1, {css: {top: $(window).height()-$('.sec_footer').height()-100}}, 100)
+					]))
+					.call(function() {
+						//controller.removePin(sections[CONTACT], false);
+						//sections[CONTACT].prev().css('height', 'auto');
+						sections[CONTACT].css({minHeight:'inherit', height: $(window).height() - 200});
+						//$('#sec_extra').css('height', '50px');
+					})
+					//.call(function() { controller.removePin(sections[CONTACT]);})
+		, offset: -100
+		});
+
+		//controller.addTween($(window).height(), TweenMax.to($('#sec_contact'), .001, { css: { position: 'fixed'} }), 1);
 		TweenLite.to(window, 5, { scrollTo: { y: $('#sec_work').position().top} })
 		TweenLite.to(window, 2.5, { scrollTo: { y: $('#sec_work').position().top + 1500} })
 	}
 
+	$('.work_example').on('mouseenter', function() {
+		$(this).find('.overlay').show();
+	}).on('mouseleave', function() {
+		$(this).find('.overlay').hide();
+	});
+	var flipDepth = -500,
+			flipDur = .8
+	$('.services_example').on('mouseenter', function() {
+		var $this = $(this);
+		var tl = new TimelineLite();
+ 		tl.to($this.find('.front'), flipDur / 2, {
+			css: { rotationY: 90, z: flipDepth, rotationX: 0 },
+			ease: Expo.easeIn
+		});
+
+		tl.append(function () {
+			$this.find('.front').hide();
+			$this.find('.back').show();
+		})
+
+		tl.fromTo($this.find('.back'), flipDur / 2,
+			{ css: { rotationY: -90, z: flipDepth, rotationX: 0 } },
+			{ css: { rotationY: 0, z: 0, rotationX: 0, alpha: 1 }, ease: Expo.easeOut }
+		);	
+	}).on('mouseleave', function() {
+		var $this = $(this);
+		var tl = new TimelineLite();
+ 		tl.to($this.find('.back'), flipDur / 2, {
+			css: { rotationY: 90, z: flipDepth, rotationX: 0 },
+			ease: Expo.easeIn
+		});
+
+		tl.append(function () {
+			$this.find('.back').hide();
+			$this.find('.front').show();
+		})
+
+		tl.fromTo($this.find('.front'), flipDur / 2,
+			{ css: { rotationY: -90, z: flipDepth, rotationX: 0 } },
+			{ css: { rotationY: 0, z: 0, rotationX: 0, alpha: 1 }, ease: Expo.easeOut }
+		);	
+		
+	});
+	
 	$('#nav_work').on('click', function () {
 		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_work').position().top - 100} });
@@ -169,11 +233,10 @@ $(document).ready(function () {
 		});
 	});
 	$('#nav_contact').on('click', function () {
-		var scrollExtra = -100;
+		var scrollExtra = -80;
 		if ($(document).scrollTop() < $('#sec_services').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
-		var tl = new TimelineLite();
 		if ($(document).scrollTop() < $('#sec_clients').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
@@ -183,9 +246,10 @@ $(document).ready(function () {
 		if ($(document).scrollTop() < $('#sec_careers').position().top) {
 			scrollExtra += PIN_DURATION;
 		}
+		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra} });
 		if ($(document).scrollTop() < $('#sec_contact').position().top) {
-			tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra + (PIN_DURATION * .75)} });
+			tl.to(window, 1, { scrollTo: { y: $('#sec_contact').position().top + scrollExtra + (PIN_DURATION * .85)} });
 		}
 		tl.call(function() {
 			$('.navitem').removeClass('active');
@@ -194,6 +258,39 @@ $(document).ready(function () {
 	});
 
 
+	$('.work_example').on('click', function() {
+		$('#overlay').show().on('click', function() { hideLightbox(); });
+		$('body').css({'height': '0','overflow-y': 'scroll'});
+		///$('nav').css('margin-left', '-8px'); //because,wtf
+		var contents = '<img src="images/work/' + $(this).data('large') + '.png"/>';
+		$('<div id="lightbox"></div>').css({position:'absolute', 'z-index': 5000, width:800, height:800}).html(contents).appendTo('body').center();
+		TweenLite.from($('#lightbox'), .6, {css: {scaleY: 0}});
+	});
 });
 
+function hideLightbox() {
+	/*
+	(new TimelineLite()).append([
+		TweenLite.to($('#lightbox'), .6, {css: {scaleY: 0}}),
+		TweenLite.delay(.6).call(function() {
+			$('#lightbox').remove();
+			$('#overlay').hide();
+		})
+	]);
+	*/
+	//$('nav').css('margin-left', '0px'); //because,wtf
+	$('#lightbox').fadeOut(function() {
+		$(this).remove();
+		$('#overlay').hide();
+	});
+	$('body').css('overflow', 'visible');
+	
+}
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
 }

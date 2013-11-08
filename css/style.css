@@ -85,7 +85,7 @@ section span { /* probably should remove this */
 section.sec {
 	width:100%;
 	max-width:1024px;
-	min-height:600px;
+	min-height:1000px;
 	background:#e3e3e3 url(../images/footer.jpg) no-repeat bottom center;
 	position:relative;
 	overflow:hidden;
@@ -96,6 +96,29 @@ section#contact {
 }
 /* end sections general */
 
+/* mulitple sections */
+.overlay {
+	background: url(../images/thumb_overlay.png) no-repeat center center;
+}
+.overlay {
+	color:#ffffff;
+	text-align:center;
+	width:221px;
+	height:222px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.overlay h3{
+	font-size:2em;
+	padding-top:2em;
+}
+.overlay p {
+	font-size:1.4em;
+}
+
+.work_example .overlay {
+	display:none;
+}
 /* intro page */
 section#sec_home {
 	width:100%;
@@ -263,40 +286,16 @@ section#sec_services div.services_example {
 	display:inline-block;
 }
 
-div.services_example:hover {
-	background-position:-221px center !important;
+.services_example {
+	position:relative;
 }
-div#services_example_01 {
-	background:url(../images/services/analytics_t.png) no-repeat;
+.services_example .front, .services_example .back {
+	position:absolute;
+	top: 0;
 }
-div#services_example_02 {
-	background:url(../images/services/creative_t.png) no-repeat;
+.services_example .back {
+	display:none;
 }
-div#services_example_03 {
-	background:url(../images/services/digital_t.png) no-repeat;
-}
-div#services_example_04 {
-	background:url(../images/services/experiential_t.png) no-repeat;
-}
-div#services_example_05 {
-	background:url(../images/services/ideas_t.png) no-repeat;
-}
-div#services_example_06 {
-	background:url(../images/services/igm_t.png) no-repeat;
-}
-div#services_example_07 {
-	background:url(../images/services/mobile_t.png) no-repeat;
-}
-div#services_example_08 {
-	background:url(../images/services/promotion_t.png) no-repeat;
-}
-div#services_example_09 {
-	background:url(../images/services/social-media_t.png) no-repeat;
-}
-div#services_example_10 {
-	background:url(../images/services/technology_t.png) no-repeat;
-}
-
 
 /* end services section */
 
@@ -645,6 +644,18 @@ html[xmlns] .clearfix {
  
 * html .clearfix {
 	height: 1%;
+}
+
+#overlay {
+	background:#333;
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:4999;
+	display:none;
+	top:0;
+	opacity:0.8;
+  	filter:alpha(opacity=80); /* For IE8 and earlier */
 }
 
 /* below should be just for testing */
