@@ -657,16 +657,24 @@ html[xmlns] .clearfix {
 }
 
 #overlay {
-	background:#333;
+	background:#194057;
 	position:fixed;
 	width:100%;
 	height:100%;
 	z-index:4999;
 	display:none;
 	top:0;
-	opacity:0.8;
-  	filter:alpha(opacity=80); /* For IE8 and earlier */
+	opacity:0.9;
+  	filter:alpha(opacity=90); /* For IE8 and earlier */
 	overflow-y:scroll;
+}
+
+#lightbox {
+	position:absolute;
+	z-index: 5000;
+	width:800px;
+	height:800px;
+	text-align: center;
 }
 
 /* below should be just for testing */

@@ -117,7 +117,7 @@ $(document).ready(function () {
 	}).on('mouseleave', function() {
 		$(this).find('.overlay').fadeOut();
 	});
-	/*
+	
 	var flipDepth = -500,
 			flipDur = .8
 	$('.services_example').on('mouseenter', function() {
@@ -155,8 +155,12 @@ $(document).ready(function () {
 			{ css: { rotationY: 0, z: 0, rotationX: 0, alpha: 1 }, ease: Expo.easeOut }
 		);	
 		
+		tl.call(function() {
+			$this.find('.front').css('-webkit-transform', '');
+			$this.find('.back').css('-webkit-transform', '');
+		})
 	});
-	*/
+	
 	$('#nav_work').on('click', function () {
 		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_work').position().top - 100} });
@@ -264,7 +268,7 @@ $(document).ready(function () {
 		$('body').css({'overflow': 'hidden'});
 		///$('nav').css('margin-left', '-8px'); //because,wtf
 		var contents = '<img src="images/work/' + $(this).data('large') + '.png"/>';
-		$('<div id="lightbox"><div class="close_lbx"></div></div>').css({position:'absolute', 'z-index': 5000, width:800, height:800}).append(contents).appendTo('body').center();
+		$('<div id="lightbox"><div class="close_lbx"></div></div>').append(contents).appendTo('body').center();
 		if($(this).data('text') != '') {
 			var contents = $(this).data('text');
 			$('#lightbox').append($('<p></p>').html(contents));
@@ -280,16 +284,6 @@ $(document).ready(function () {
 });
 
 function hideLightbox() {
-	/*
-	(new TimelineLite()).append([
-		TweenLite.to($('#lightbox'), .6, {css: {scaleY: 0}}),
-		TweenLite.delay(.6).call(function() {
-			$('#lightbox').remove();
-			$('#overlay').hide();
-		})
-	]);
-	*/
-	//$('nav').css('margin-left', '0px'); //because,wtf
 		$('#overlay').hide();
 	$('#lightbox').fadeOut(function() {
 		$(this).remove();
