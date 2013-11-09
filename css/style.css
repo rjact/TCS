@@ -99,8 +99,6 @@ section#contact {
 /* mulitple sections */
 .overlay {
 	background: url(../images/thumb_overlay.png) no-repeat center center;
-}
-.overlay {
 	color:#ffffff;
 	text-align:center;
 	width:221px;
@@ -299,13 +297,63 @@ section#sec_services div.services_example {
 .services_example {
 	position:relative;
 }
+.services_example .front h3 {
+	margin-top:64px;
+	text-align:center;
+	font-family:Montserrat;
+	color:#ffffff;
+}
+.services_example .back h3 {
+	font-size:1em;
+	padding-top:0;
+}
+.services_example .back p {
+	font-size:0.8em;
+	padding-top:0.8em;
+}
+#services_example_01 .front {
+	background:url(../images/services/analytics_t.png) no-repeat center center;
+}
+#services_example_02 .front {
+	background:url(../images/services/creative_t.png) no-repeat center center;
+}
+#services_example_03 .front {
+	background:url(../images/services/digital_t.png) no-repeat center center;
+}
+#services_example_04 .front {
+	background:url(../images/services/experiential_t.png) no-repeat center center;
+}
+#services_example_05 .front {
+	background:url(../images/services/ideas_t.png) no-repeat center center;
+}
+#services_example_06 .front {
+	background:url(../images/services/igm_t.png) no-repeat center center;
+}
+#services_example_07 .front {
+	background:url(../images/services/mobile_t.png) no-repeat center center;
+}
+#services_example_08 .front {
+	background:url(../images/services/promotion_t.png) no-repeat center center;
+}
+#services_example_09 .front {
+	background:url(../images/services/social-media_t.png) no-repeat center center;
+}
+#services_example_10 .front {
+	background:url(../images/services/technology_t.png) no-repeat center center;
+}
+.services_example .overlay{
+	background-image:url(../images/services/services_hover.png);
+}
 .services_example .front, .services_example .back {
 	position:absolute;
 	top: 0;
+	width:221px;
 }
 .services_example .back {
 	display:none;
+	top:25px;
 }
+
 
 /* end services section */
 
@@ -677,18 +725,12 @@ html[xmlns] .clearfix {
 	text-align: center;
 }
 
-/* below should be just for testing */
-#scrollPercentLabel {
-	position:fixed;
-	bottom:10px;
-	left:0;
-	font-family: Impact;
-	font-size: 50px;
-	color: #2B2B2B;
-	background: rgba(255, 255, 255, 0.5);
-	padding: 20px;
-	box-shadow: 8px 8px 5px rgba(20, 20, 20, 1);
-	border-radius: 15px;
-	z-index:25;
+#lightbox p {
+	color:#ffffff;
+	font-family:montserrat;
+	font-size:16px;
 }
+
+
+
 
