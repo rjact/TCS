@@ -113,11 +113,10 @@ $(document).ready(function () {
 	}
 
 	$('.work_example').on('mouseenter', function() {
-		$(this).find('.overlay').fadeIn();
+		$(this).find('.overlay').show();
 	}).on('mouseleave', function() {
-		$(this).find('.overlay').fadeOut();
+		$(this).find('.overlay').hide();
 	});
-	/*
 	var flipDepth = -500,
 			flipDur = .8
 	$('.services_example').on('mouseenter', function() {
@@ -156,7 +155,7 @@ $(document).ready(function () {
 		);	
 		
 	});
-	*/
+	
 	$('#nav_work').on('click', function () {
 		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_work').position().top - 100} });
