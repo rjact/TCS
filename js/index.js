@@ -11,7 +11,7 @@ $(document).ready(function () {
 		TweenLite.delayedCall(1.5, function () {
 			$('#intro-image').css('backgroundPosition', 'bottom center');
 		}),
-		TweenLite.delayedCall(3, function() {
+		TweenLite.delayedCall(.3, function() {
 			s.animateTo($('#work').position().top + 800, {
 				duration:1500
 			});
@@ -281,24 +281,26 @@ $(document).ready(function () {
 */
 
 	$('.work_example').on('click', function() {
-		showLightbox($(this).data('large'), 800);
+		showLightbox($(this).data('large'), $(this).data('text'), 800);
+	});
+	$('.services_example').on('click', function() {
+		showLightbox($(this).data('large'), $(this).data('text'), 800);
 	});
 	$('.team_example').on('click', function() {
-		showLightbox($(this).data('large'), 600);
+		showLightbox($(this).data('large'), $(this).data('text'), 600);
 	});
 	
 	
 });
 
-function showLightbox(image, size) {
+function showLightbox(image, text, size) {
 		$('#overlay').show().on('click', function() { hideLightbox(); });
 		$('body').css({'overflow': 'hidden'});
 		///$('nav').css('margin-left', '-8px'); //because,wtf
 		var contents = '<img src="images/lightbox/' + image + '.png"/>';
 		$('<div id="lightbox"><div class="close_lbx"></div></div>').css({width: size, height: size}).append(contents).appendTo('body').center();
-		if($(this).data('text') != '') {
-			var contents = $(this).data('text');
-			$('#lightbox').append($('<p></p>').html(contents));
+		if(text != '') {
+			$('#lightbox').append($('<p></p>').html(text));
 		}
 		//TweenLite.from($('#lightbox'), .6, {css: {scaleY: 0}});
 		$('#lightbox').delegate('.close_lbx', 'click', function() {
