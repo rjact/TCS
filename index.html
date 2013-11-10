@@ -6,6 +6,7 @@
 <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/reset.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+   <link rel="stylesheet" href="css/skrollr.fixed-positioning.css" media="screen" type="text/css" />
 	  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 	<script src="js/shapewrapper.js"></script>
 	<script>
@@ -16,29 +17,29 @@
 
 <body>
 
-	<div id="page">
-		<section class="sec" id="sec_home">
+		<section class="sec" id="home" data-0="top:0%">
 			<div id="intro-content">
 			  <div id="intro-image"></div>
 			  <h1>Ideas That Make A Difference<sup><sup><sup>&trade;</sup></sup></sup></h1>
 			</div>
 		</section>
-		<nav>
+
+		<nav data-0="top:100%" data-top="top:0%" style="z-index:101;">
 			<div id="tagline_holder">
 				<div id="tagline">Making a difference since 1999</div>
 			</div>
 			<ul class="clearfix">
 				<li class="navitem" id="nav_home" style="padding-top:7px;padding-bottom:0;"><img src="images/logo_small.png" /></li>
-				<li class="navitem" id="nav_work">Work</li>
-				<li class="navitem" id="nav_services">Services</li>
-				<li class="navitem" id="nav_clients">Clients</li>
-				<li class="navitem" id="nav_team">Team</li>
-				<li class="navitem" id="nav_careers">Careers</li>
-				<li class="navitem" id="nav_contact">Contact</li>
+				<li class="navitem" id="nav_work"><a href="#work">Work</a></li>
+				<li class="navitem" id="nav_services"><a href="#services">Services</a<</li>
+				<li class="navitem" id="nav_clients"><a href="#clients">Clients</a></li>
+				<li class="navitem" id="nav_team"><a href="#team">Team</a></li>
+				<li class="navitem" id="nav_careers"><a href="#careers">Careers</a></li>
+				<li class="navitem" id="nav_contact"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
-		<div id="sections">
-			<section class="sec" id="sec_work">
+		
+			<section class="sec" id="work" data-0="top:0%" data-top="top:0%">
 				<div class="sec_header">
 					<h1>A Marketing Agency Built to Deliver...</h1>
 					<p>Ideas powered by strategy, insights, technology and boundless<br/>creativity.  We engage, enhance and extend the dialogue<br/>between brands and consumers.</p>
@@ -58,7 +59,7 @@
 					<div class="example work_example" id="work_example_12" data-large="attlatino"><div class="overlay"><h3>AT&T Latino</h3><p>Samsung Galaxy</br>"top secret"</p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="sec_services">
+			<section class="sec" id="services" data-500="top:100%" data-1000="top:0%" data-1000="top:-1500%;display:none;">
 				<div class="sec_header">
 					<p>"A solid strategy will keep you in the game,<br/>a BIG idea will WIN it."</p>
 				</div>
@@ -84,7 +85,7 @@
 				</div>
 
 			</section>
-			<section class="sec" id="sec_clients">
+			<section class="sec" id="clients" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Some of our clients that have seen the difference</p>
 				</div>
@@ -103,7 +104,7 @@
 				</div>
 					
 			</section>
-			<section class="sec" id="sec_team">
+			<section class="sec" id="team">
 				<div class="sec_header">
 					<p>The Team That Makes a Difference</p>
 				</div>
@@ -120,7 +121,7 @@
 					<div class="example team_example" id="team_example_10" data-large="jasonS"><div class="overlay"><h3>Jason S</h3><p></p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="sec_careers">
+			<section class="sec" id="careers">
 				<div class="sec_header">
 					<p>Do you have what it takes to make a difference?</p>
 				</div>
@@ -136,7 +137,7 @@
 					<p>Send us an email with your Resume, portfolio or samples of work.  Let's talk</p>
 				</div>
 			</section>
-			<section class="sec" id="sec_contact">
+			<section class="sec" id="contact">
 				<div class="sec_header">
 					<p>Let us make a difference for you</p>
 				</div>
@@ -193,18 +194,28 @@
 					</ul>
 				</div>
 			</section>
-			<section class="extra" id="sec_extra" style="height:1000px;">
-				&nbsp;
-			</section>
-		</div>
+
 	<div style="height:25px;">&nbsp;</div>
-	</div>
 	<div id="overlay">&nbsp;</div>
 	
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/plugins/ScrollToPlugin.min.js"></script>
   <script src="js/jquery.superscrollorama.js"></script>
   <script src="js/index.js"></script>
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+	var s = skrollr.init({});
+	skrollr.menu.init(s, {
+		//skrollr will smoothly animate to the new position using `animateTo`.
+		animate: true	
+	});
+	</script>
 
 </body>
 </html>

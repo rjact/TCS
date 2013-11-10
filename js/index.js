@@ -2,10 +2,11 @@
 var PIN_DURATION = 2000
 $(document).ready(function () {
 	$(document).scrollTop(0);
+	//tlIntro = new TimelineLite();
 	tlIntro = new TimelineLite({ onComplete: initScroller });
 	tlIntro.delay(1).append([
-		TweenLite.to($('#sec_home'), 1.5, { css: { backgroundColor: '#002B45'} }),
-		TweenLite.to($('#sec_home h1'), 1.75, { css: { color: '#ffffff'} }),
+		TweenLite.to($('#home'), 1.5, { css: { backgroundColor: '#002B45'} }),
+		TweenLite.to($('#home h1'), 1.75, { css: { color: '#ffffff'} }),
 		TweenLite.delayedCall(1.5, function () {
 			$('#intro-image').css('backgroundPosition', 'bottom center');
 		})
@@ -172,6 +173,7 @@ $(document).ready(function () {
 		$(this).find('.back').prepend(shapeWrapper("15","7.5,91,111|22.5,62,75|37.5,33,44|52.5,25,37|67.5,21,31|82.5,17,25|97.5,12,18|112.5,8,12|127.5,13,19|142.5,19,25|157.5,25,32|172.5,31,38|187.5,50,51|202.5,76,83|217.5,0,0|232.5,0,0|247.5,0,0|"));
 		
 	});
+	/*
 	$('#nav_work').on('click', function () {
 		var tl = new TimelineLite();
 		tl.to(window, 1, { scrollTo: { y: $('#sec_work').position().top - 100} });
@@ -272,7 +274,7 @@ $(document).ready(function () {
 			$('#nav_contact').addClass('active');
 		});
 	});
-
+*/
 
 	$('.work_example').on('click', function() {
 		showLightbox($(this).data('large'), 800);
@@ -281,7 +283,6 @@ $(document).ready(function () {
 		showLightbox($(this).data('large'), 600);
 	});
 	
-	$('.fancybox').fancybox();
 	
 });
 
