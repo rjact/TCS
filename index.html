@@ -59,7 +59,7 @@
 					<div class="example work_example" id="work_example_12" data-_home-650="margin-top:-100px;opacity:0" data-_home-750="margin-top:30px;opacity:1" data-large="attlatino"><div class="overlay"><h3>AT&T Latino</h3><p>Samsung Galaxy</br>"top secret"</p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="services" data-0="top:1000px" data-_work="top:1000px" data-_work-650="top:107px;" data-_work-1200="" data-_work-2000="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="services" data-0="top:1000px" data-_work="top:1000px" data-_work-625="top:107px;" data-_work-1200="" data-_work-2100="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>"A solid strategy will keep you in the game,<br/>a BIG idea will WIN it."</p>
 				</div>
@@ -78,22 +78,22 @@
 
 			</section>
 
-			<section class="sec" id="clients" data-0="top:1000px" data-_services="top:1000px" data-_services-1200="top:107px;" data-_services-1800="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="clients" data-0="top:1000px" data-_services-450="top:1000px" data-_services-750="top:107px;" data-_services-1600="" data-_services-2500="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Some of our clients that have seen the difference</p>
 				</div>
 				<div class="client_examples">
-					<div class="example client_example" id="client_example_01"><img src="images/clients/z2.png" width="91" height="91" /></div>
-					<div class="example client_example" id="client_example_02"><img src="images/clients/white-pages.png" width="223" height="106" /></div>
-					<div class="example client_example" id="client_example_03"><img src="images/clients/fx.png" width="180" height="98" /></div>
-					<div class="example client_example" id="client_example_04"><img src="images/clients/espn.png" width="93" height="94" /></div>
-					<div class="example client_example" id="client_example_05"><img src="images/clients/nascar.png" width="296" height="52" /></div>
-					<div class="example client_example" id="client_example_06"><img src="images/clients/disney.png" width="97" height="98" /></div>
-					<div class="example client_example" id="client_example_07"><img src="images/clients/att.png" width="72" height="73" /></div>
-					<div class="example client_example" id="client_example_08"><img src="images/clients/mobitv.png" width="263" height="102" /></div>
-					<div class="example client_example" id="client_example_09"><img src="images/clients/fox.png" width="198" height="85" /></div>
-					<div class="example client_example" id="client_example_10"><img src="images/clients/att-uverse.png" width="286" height="33" /></div>
-					<div class="example client_example" id="client_example_11"><img src="images/clients/abc.png" width="99" height="100" /></div>
+					<div class="example client_example" id="client_example_01" data-_services-800="margin-left:1000px" data-_services-900="margin-left:0px"><img src="images/clients/z2.png" width="91" height="91" /></div>
+					<div class="example client_example" id="client_example_02" data-_services-850="margin-left:1000px" data-_services-950="margin-left:0px"><img src="images/clients/white-pages.png" width="223" height="106" /></div>
+					<div class="example client_example" id="client_example_03" data-_services-900="margin-left:1000px" data-_services-1000="margin-left:0px"><img src="images/clients/fx.png" width="180" height="98" /></div>
+					<div class="example client_example" id="client_example_04" data-_services-950="margin-left:1000px" data-_services-1050="margin-left:0px"><img src="images/clients/espn.png" width="93" height="94" /></div>
+					<div class="example client_example" id="client_example_05" data-_services-1000="margin-left:1000px" data-_services-1100="margin-left:0px"><img src="images/clients/nascar.png" width="296" height="52" /></div>
+					<div class="example client_example" id="client_example_06" data-_services-1050="margin-left:1000px" data-_services-1150="margin-left:0px"><img src="images/clients/disney.png" width="97" height="98" /></div>
+					<div class="example client_example" id="client_example_07" data-_services-1100="margin-left:1000px" data-_services-1200="margin-left:0px"><img src="images/clients/att.png" width="72" height="73" /></div>
+					<div class="example client_example" id="client_example_08" data-_services-1150="margin-left:1000px" data-_services-1250="margin-left:0px"><img src="images/clients/mobitv.png" width="263" height="102" /></div>
+					<div class="example client_example" id="client_example_09" data-_services-1200="margin-left:1000px" data-_services-1300="margin-left:0px"><img src="images/clients/fox.png" width="198" height="85" /></div>
+					<div class="example client_example" id="client_example_10" data-_services-1250="margin-left:1000px" data-_services-1350="margin-left:0px"><img src="images/clients/att-uverse.png" width="286" height="33" /></div>
+					<div class="example client_example" id="client_example_11" data-_services-1300="margin-left:1000px" data-_services-1400="margin-left:0px"><img src="images/clients/abc.png" width="99" height="100" /></div>
 				</div>
 					
 			</section>
@@ -211,6 +211,10 @@
 			home:1000,
 			work: 2000,
 			services: 3000
+		},
+		render: function(data) {
+			//Log the current scroll position.
+			console.log(data.curTop);
 		}
 	});
 	skrollr.menu.init(s, {
