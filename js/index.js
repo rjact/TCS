@@ -5,18 +5,25 @@ $(document).ready(function () {
 	tlIntro = new TimelineLite();
 	//tlIntro = new TimelineLite({ onComplete: initScroller });
 	//tlIntro = new TimelineLite({ onComplete: s.animateTo($('#work').position().top) });
-	tlIntro.delay(1).append([
+	tlIntro.delay(.01).append([
 		TweenLite.to($('#home'), 1.5, { css: { backgroundColor: '#002B45'} }),
 		TweenLite.to($('#home h1'), 1.75, { css: { color: '#ffffff'} }),
 		TweenLite.delayedCall(1.5, function () {
 			$('#intro-image').css('backgroundPosition', 'bottom center');
 		}),
 		TweenLite.delayedCall(.3, function() {
-			s.animateTo($('#work').position().top + 800, {
-				duration:1500
-			});
+			if(window.location.hash == '') {
+				s.animateTo($('#work').position().top + 800, {
+					duration:1500
+				});
+			}
 		})
 		]);
+	skrollr.menu.init(s, {
+		//skrollr will smoothly animate to the new position using `animateTo`.
+		animate: true,
+		offset: 400	
+	});
 
 	$('section.sec').each(function () {
 		$(this).css('height', $(this.outerHeight) + PIN_DURATION);

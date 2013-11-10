@@ -465,6 +465,7 @@ section#team div.team_example {
 	margin:28px;
 	background-position:0 0;
 	display:inline-block;
+	position:relative;
 }
 
 div#team_example_01 {
@@ -659,11 +660,15 @@ section#contact .sec_right ul li input[type=submit] {
 }
 
 div.sec_footer {
-	position:absolute;
-	bottom:0px;
+	position:fixed;
+	bottom:-200px;
 	width:100%;
+	max-width:1024px;
 	background:url(../images/footer_tall.jpg) no-repeat bottom center;
 	height:140px;
+	left:0;
+	right:0;
+	margin:0 auto;
 } 
 ul#social_links {
 	float:left;
