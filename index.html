@@ -23,13 +23,13 @@
 			</div>
 		</section>
 
-		<nav data-0="top:100%" data-_home="top:0%" style="z-index:101;position:fixed;">
+		<nav data-0="top:100%" data-_home--25="top:0%" style="z-index:101;position:fixed;">
 			<div id="tagline_holder">
 				<div id="tagline">Making a difference since 1999</div>
 			</div>
 			<ul class="clearfix">
 				<li class="navitem" id="nav_home" style="padding-top:7px;padding-bottom:0;"><img src="images/logo_small.png" /></li>
-				<li class="navitem" id="nav_work" data-anchor-target="#body" data-_work="background[end]=rgb(29,128,190);" data-_services="background[end]=rgb(0,43,69);"><a href="#work" data-scroll-offset="1200">Work</a></li>
+				<li class="navitem" id="nav_work" data-anchor-target="#work" data-_work="background=rgb(29,128,190);" data-_services="background[end]=rgb(0,43,69);"><a href="#work" data-scroll-offset="1200">Work</a></li>
 				<li class="navitem" id="nav_services"><a href="#services"data-scroll-offset="400">Services</a></li>
 				<li class="navitem" id="nav_clients"><a href="#clients">Clients</a></li>
 				<li class="navitem" id="nav_team"><a href="#team">Team</a></li>
@@ -38,7 +38,7 @@
 			</ul>
 		</nav>
 		
-			<section class="sec" id="work" data-0="top:1000px" data-_home="top:107px;" data-_home-800="top:107px;" data-_home-2000="top:-2000px"  data-menu-offset="-100">
+			<section class="sec" id="work" data-0="top:1800px" data-1="top:1000px;" data-_home--25="top:107px;" data-_home-800="top:107px;" data-_home-2000="top:-2000px"  data-menu-offset="-100">
 				<div class="sec_header">
 					<h1>A Marketing Agency Built to Deliver...</h1>
 					<p>Ideas powered by strategy, insights, technology and boundless<br/>creativity.  We engage, enhance and extend the dialogue<br/>between brands and consumers.</p>
@@ -58,7 +58,7 @@
 					<div class="example work_example" id="work_example_12" data-_home-650="margin-top:-100px;opacity:0" data-_home-750="margin-top:30px;opacity:1" data-large="attlatino"><div class="overlay"><h3>AT&T Latino</h3><p>Samsung Galaxy</br>"top secret"</p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="services" data-0="top:1000px" data-_work="top:1000px" data-_work-625="top:107px;" data-_work-1200="" data-_work-2300="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="services" data-0="top:2900px" data-_work="top:1000px" data-_work-635="top:107px;" data-_work-1200="" data-_work-2300="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>"A solid strategy will keep you in the game,<br/>a BIG idea will WIN it."</p>
 				</div>
@@ -77,7 +77,7 @@
 
 			</section>
 
-			<section class="sec" id="clients" data-0="top:1000px" data-_services-450="top:1000px" data-_services-950="top:107px;" data-_services-1600="" data-_services-2500="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="clients" data-0="top:4300px" data-_services-450="top:1000px" data-_services-950="top:107px;" data-_services-1600="" data-_services-2500="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Some of our clients that have seen the difference</p>
 				</div>
@@ -97,7 +97,7 @@
 					
 			</section>
 
-			<section class="sec" id="team" data-0="top:1000px" data-_clients-650="top:1000px" data-_clients-950="top:107px;" data-_clients-1600="" data-_clients-2600="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="team" data-0="top:5500px" data-_clients-650="top:1000px" data-_clients-950="top:107px;" data-_clients-1600="" data-_clients-2600="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>The Team That Makes a Difference</p>
 				</div>
@@ -115,7 +115,7 @@
 				</div>
 			</section>
 			
-			<section class="sec" id="careers" data-0="top:1000px" data-_team-825="top:1000px" data-_team-1250="top:107px;" data-_team-1800="" data-_team-2400="top:-2000px" data-menu-offset="-100">
+			<section class="sec" id="careers" data-0="top:6800px" data-_team-825="top:1000px" data-_team-1250="top:107px;" data-_team-1800="" data-_team-2400="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Do you have what it takes to make a difference?</p>
 				</div>
@@ -132,7 +132,7 @@
 				</div>
 			</section>
 
-			<section class="sec" id="contact" data-0="top:1000px" data-_careers-825="top:1000px" data-_careers-1050="top:107px;" data-menu-offset="-100" data-menu-offset="-100">
+			<section class="sec" id="contact" data-0="top:7200px" data-_careers-825="top:1000px" data-_careers-1050="top:107px;" data-menu-offset="-100" data-menu-offset="-100">
 				<div class="sec_header" >
 					<p>Let us make a difference for you</p>
 				</div>
@@ -217,7 +217,33 @@
 		},
 		render: function(data) {
 			//Log the current scroll position.
-			//console.log(data.curTop);
+			console.log(data.curTop);
+			switch(data.curTop) {
+				case 1800: 
+					navHighlight('work');
+					window.location.hash = "#work";
+					break;
+				case 3150:
+					navHighlight('services');
+					window.location.hash = "#services";
+					break;
+				case 4600:
+					navHighlight('clients');
+					window.location.hash = "#clients";
+					break;
+				case 5600:
+					navHighlight('team');
+					window.location.hash = "#team";
+					break;
+				case 6800:
+					navHighlight('careers');
+					window.location.hash = "#careers";
+					break;
+				case 7100:
+					navHighlight('contact');
+					window.location.hash = "#contact";
+					break;
+			}
 		}
 	});
 	skrollr.menu.init(s, {
@@ -227,7 +253,35 @@
 	});
 
   $(function(){
-    //skrollr_instance = skrollrPages()
+    $(window).scroll(function() {
+		switch(s.getScrollTop()) {
+				case 1800: 
+					navHighlight('work');
+					window.location.hash = "#work";
+					break;
+				case 3150:
+					navHighlight('services');
+					window.location.hash = "#services";
+					break;
+				case 4600:
+					navHighlight('clients');
+					window.location.hash = "#clients";
+					break;
+				case 5600:
+					navHighlight('team');
+					window.location.hash = "#team";
+					break;
+				case 6800:
+					navHighlight('careers');
+					window.location.hash = "#careers";
+					break;
+				case 7100:
+					navHighlight('contact');
+					window.location.hash = "#contact";
+					break;
+			
+		}
+	});
   });
 </script>	
 
