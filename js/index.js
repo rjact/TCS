@@ -118,6 +118,12 @@ $(document).ready(function () {
 		$(this).find('.overlay').fadeOut();
 	});
 	
+	$('.team_example').on('mouseenter', function() {
+		$(this).find('.overlay').fadeIn();
+	}).on('mouseleave', function() {
+		$(this).find('.overlay').fadeOut();
+	});
+	
 	var flipDepth = -500,
 			flipDur = .8
 	$('.services_example').on('mouseenter', function() {
@@ -268,12 +274,23 @@ $(document).ready(function () {
 	});
 
 
-	$('.example').on('click', function() {
+	$('.work_example').on('click', function() {
+		showLightbox($(this).data('large'), 800);
+	});
+	$('.team_example').on('click', function() {
+		showLightbox($(this).data('large'), 600);
+	});
+	
+	$('.fancybox').fancybox();
+	
+});
+
+function showLightbox(image, size) {
 		$('#overlay').show().on('click', function() { hideLightbox(); });
 		$('body').css({'overflow': 'hidden'});
 		///$('nav').css('margin-left', '-8px'); //because,wtf
-		var contents = '<img src="images/work/' + $(this).data('large') + '.png"/>';
-		$('<div id="lightbox"><div class="close_lbx"></div></div>').append(contents).appendTo('body').center();
+		var contents = '<img src="images/lightbox/' + image + '.png"/>';
+		$('<div id="lightbox"><div class="close_lbx"></div></div>').css({width: size, height: size}).append(contents).appendTo('body').center();
 		if($(this).data('text') != '') {
 			var contents = $(this).data('text');
 			$('#lightbox').append($('<p></p>').html(contents));
@@ -282,12 +299,8 @@ $(document).ready(function () {
 		$('#lightbox').delegate('.close_lbx', 'click', function() {
 			hideLightbox();
 		});
-	});
 	
-	$('.fancybox').fancybox();
-	
-});
-
+}
 function hideLightbox() {
 		$('#overlay').hide();
 	$('#lightbox').fadeOut(function() {

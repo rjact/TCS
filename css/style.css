@@ -459,9 +459,6 @@ section#sec_team div.team_example {
 	display:inline-block;
 }
 
-div.team_example:hover {
-	background-position:-221px center !important;
-}
 div#team_example_01 {
 	background:url(../images/team/stephenJ_t.png) no-repeat;
 }
@@ -493,7 +490,18 @@ div#team_example_10 {
 	background:url(../images/team/jasonS_t.png) no-repeat;
 }
 
-
+.team_example .overlay {
+	display:none;
+	position:absolute;
+}
+.team_example .overlay h3 {
+	font-size:1.2em;
+	padding-top:3.4em;
+}
+.team_example .overlay p {
+	font-size: 1em;
+	padding-top:1em;
+}
 /* end team section */
 
 /* careers section  */
@@ -554,7 +562,7 @@ section#sec_contact .sec_header p {
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
 	font-size:2em;
-	padding-top:7.6em;
+	padding-top:8em;
 }
 
 section#sec_contact .sec_left {
@@ -720,8 +728,8 @@ html[xmlns] .clearfix {
 #lightbox {
 	position:absolute;
 	z-index: 5000;
-	width:800px;
-	height:800px;
+	width:600px;
+	height:600px;
 	text-align: center;
 }
 
