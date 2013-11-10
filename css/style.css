@@ -93,9 +93,11 @@ section.sec {
 	max-width:1024px;
 	min-height:1000px;
 	background:#e3e3e3 url(../images/footer.jpg) no-repeat bottom center;
-	position:relative;
+	position:fixed;
 	overflow:hidden;
 	padding-bottom:100px;
+	left:0;
+	right:0;
 }
 section#contact {
 	background:#e3e3e3 url(../images/footer_tall.jpg) no-repeat bottom center;
@@ -136,7 +138,8 @@ section#contact {
 /* intro page */
 section#home {
 	width:100%;
-	position:relative;
+	height:100%;
+	position:absolute;
 	background:none;
 	max-width:none;
 	padding-bottom:0;

@@ -2,15 +2,20 @@
 var PIN_DURATION = 2000
 $(document).ready(function () {
 	$(document).scrollTop(0);
-	//tlIntro = new TimelineLite();
-	tlIntro = new TimelineLite({ onComplete: initScroller });
+	tlIntro = new TimelineLite();
+	//tlIntro = new TimelineLite({ onComplete: initScroller });
+	//tlIntro = new TimelineLite({ onComplete: s.animateTo($('#work').position().top) });
 	tlIntro.delay(1).append([
 		TweenLite.to($('#home'), 1.5, { css: { backgroundColor: '#002B45'} }),
 		TweenLite.to($('#home h1'), 1.75, { css: { color: '#ffffff'} }),
 		TweenLite.delayedCall(1.5, function () {
 			$('#intro-image').css('backgroundPosition', 'bottom center');
+		}),
+		TweenLite.delayedCall(3, function() {
+			s.animateTo($('#work').position().top + 800, {
+				duration:1500
+			});
 		})
-
 		]);
 
 	$('section.sec').each(function () {
@@ -109,8 +114,7 @@ $(document).ready(function () {
 		});
 
 		//controller.addTween($(window).height(), TweenMax.to($('#sec_contact'), .001, { css: { position: 'fixed'} }), 1);
-		TweenLite.to(window, 5, { scrollTo: { y: $('#sec_work').position().top} })
-		TweenLite.to(window, 2.5, { scrollTo: { y: $('#sec_work').position().top + 1500} })
+		TweenLite.to(window, 2, { scrollTo: { y: $('#work').position().top} })
 	}
 
 	$('.work_example').on('mouseenter', function() {
