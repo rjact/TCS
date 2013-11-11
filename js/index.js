@@ -3,13 +3,13 @@ var PIN_DURATION = 2000
 $(document).ready(function () {
 	$(document).scrollTop(0);
 	tlIntro = new TimelineLite();
-	tlIntro.delay(.01).append([
+	tlIntro.delay(1).append([
 		TweenLite.to($('#home'), 1.5, { css: { backgroundColor: '#002B45'} }),
 		TweenLite.to($('#home h1'), 1.75, { css: { color: '#ffffff'} }),
 		TweenLite.delayedCall(1.5, function () {
 			$('#intro-image').css('backgroundPosition', 'bottom center');
 		}),
-		TweenLite.delayedCall(.3, function() {
+		TweenLite.delayedCall(1, function() {
 			if(window.location.hash == '') {
 				s.animateTo($('#work').position().top, {
 					duration:1500
