@@ -44,9 +44,9 @@
 					<p>Ideas powered by strategy, insights, technology and boundless<br/>creativity.  We engage, enhance and extend the dialogue<br/>between brands and consumers.</p>
 				</div>
 				<div class="work_examples clearfix" style="position:relative;">
-					<div class="example work_example" id="work_example_01" data-_home-100="margin-top:-100px;opacity:0" data-_home-200="margin-top:30px;opacity:1" data-large="whitepages"><div class="overlay"><h3>WhitePages</h3><p>SMS LookUp Services</p></div></div>
-					<div class="example work_example" id="work_example_02" data-_home-150="margin-top:-100px;opacity:0" data-_home-250="margin-top:30px;opacity:1" data-large="whmh"><div class="overlay"><h3>Where Happy Meets Healthy</h3><p>Social Community Generation</p></div></div>
-					<div class="example work_example" id="work_example_03" data-_home-200="margin-top:-100px;opacity:0" data-_home-300="margin-top:30px;opacity:1" data-large="yp"><div class="overlay"><h3>YP</h3><p>App Developer Contest</p></div></div>
+					<div class="example work_example" id="work_example_01" data-_home-100="margin-top:-50px;opacity:0" data-_home-200="margin-top:30px;opacity:1" data-large="whitepages"><div class="overlay"><h3>WhitePages</h3><p>SMS LookUp Services</p></div></div>
+					<div class="example work_example" id="work_example_02" data-_home-150="margin-top:-15px;opacity:0" data-_home-250="margin-top:30px;opacity:1" data-large="whmh"><div class="overlay"><h3>Where Happy Meets Healthy</h3><p>Social Community Generation</p></div></div>
+					<div class="example work_example" id="work_example_03" data-_home-200="margin-top:-50px;opacity:0" data-_home-300="margin-top:30px;opacity:1" data-large="yp"><div class="overlay"><h3>YP</h3><p>App Developer Contest</p></div></div>
 					<div class="example work_example" id="work_example_04" data-_home-250="margin-top:-100px;opacity:0" data-_home-350="margin-top:30px;opacity:1" data-large="att_disney"><div class="overlay"><h3>AT&T U-verse</h3><p>Disney Teen Beach</br>Movie Premiere</p></div></div>
 					<div class="example work_example" id="work_example_05" data-_home-300="margin-top:-100px;opacity:0" data-_home-400="margin-top:30px;opacity:1" data-large="myatt"><div class="overlay"><h3>myAT&T</h3><p>Triple Crown</p></div></div>
 					<div class="example work_example" id="work_example_06" data-_home-350="margin-top:-100px;opacity:0" data-_home-450="margin-top:30px;opacity:1" data-large="mobitv"><div class="overlay"><h3>MobiTV</h3><p>Trial Program</p></div></div>
@@ -220,29 +220,7 @@
 	});
 
   $(function(){
-    $(window).scroll(function() {
-		var top = s.getScrollTop();
-		if (top > 1000 && top < 2500 ) {
-				navHighlight('work');
-				history.pushState(null, null, '#work')
-		} else if (top > 2500 && top < 3850) {
-				navHighlight('services');
-				history.pushState(null, null, '#services')
-		} else if (top > 3850 && top < 4900) {
-				navHighlight('clients');
-				history.pushState(null, null, '#clients')
-		} else if (top > 4900 && top < 6200) {
-				navHighlight('team');
-				history.pushState(null, null, '#team')
-		} else if (top > 6200 && top < 7000) {
-				navHighlight('careers');
-				history.pushState(null, null, '#careers')
-		} else {
-				navHighlight('contact');
-				history.pushState(null, null, '#contact')
-		}
-	});
-  });
+   });
 </script>	
 
 </body>

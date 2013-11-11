@@ -12,7 +12,7 @@ $(document).ready(function () {
 		TweenLite.delayedCall(1, function() {
 			if(window.location.hash == '') {
 				s.animateTo($('#work').position().top, {
-					duration:1500
+					duration:2500
 				});
 			} else {
 				var hash = window.location.hash.substring(1);
@@ -20,13 +20,14 @@ $(document).ready(function () {
 					$('#nav_'+hash).click();
 				}
 			}
+			setScrollWatcher();
 		})
 		]);
 	skrollr.menu.init(s, {
 		//skrollr will smoothly animate to the new position using `animateTo`.
 		animate: true,
 		offset: 0,
-		duration:1500
+		duration:2500
 	});
 
 	$('.work_example').on('mouseenter', function() {
@@ -166,4 +167,29 @@ jQuery.fn.center = function () {
     this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
                                                 $(window).scrollLeft()) + "px");
     return this;
+}
+
+function setScrollWatcher() {
+	   $(window).scroll(function() {
+		var top = s.getScrollTop();
+		if (top > 1000 && top < 2500 ) {
+				navHighlight('work');
+				history.pushState(null, null, '#work')
+		} else if (top > 2500 && top < 3850) {
+				navHighlight('services');
+				history.pushState(null, null, '#services')
+		} else if (top > 3850 && top < 4900) {
+				navHighlight('clients');
+				history.pushState(null, null, '#clients')
+		} else if (top > 4900 && top < 6200) {
+				navHighlight('team');
+				history.pushState(null, null, '#team')
+		} else if (top > 6200 && top < 7000) {
+				navHighlight('careers');
+				history.pushState(null, null, '#careers')
+		} else {
+				navHighlight('contact');
+				history.pushState(null, null, '#contact')
+		}
+	});
 }
