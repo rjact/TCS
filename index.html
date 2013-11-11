@@ -193,12 +193,9 @@
 	<div id="overlay">&nbsp;</div>
 	
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/plugins/ScrollToPlugin.min.js"></script>
-  <script src="js/jquery.superscrollorama.js"></script>
   <script src="js/index.js"></script>
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 <script type="text/javascript" src="js/skrollr.menu.min.js"></script>
-<script type="text/javascript" src="js/skrollr.pages.js"></script>
 
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
@@ -214,36 +211,6 @@
 			team: 5000,
 			careers: 6000,
 			contact: 7000
-		},
-		render: function(data) {
-			//Log the current scroll position.
-			console.log(data.curTop);
-			switch(data.curTop) {
-				case 1800: 
-					navHighlight('work');
-					window.location.hash = "#work";
-					break;
-				case 3150:
-					navHighlight('services');
-					window.location.hash = "#services";
-					break;
-				case 4600:
-					navHighlight('clients');
-					window.location.hash = "#clients";
-					break;
-				case 5600:
-					navHighlight('team');
-					window.location.hash = "#team";
-					break;
-				case 6800:
-					navHighlight('careers');
-					window.location.hash = "#careers";
-					break;
-				case 7100:
-					navHighlight('contact');
-					window.location.hash = "#contact";
-					break;
-			}
 		}
 	});
 	skrollr.menu.init(s, {
@@ -254,35 +221,6 @@
 
   $(function(){
     $(window).scroll(function() {
-	/*
-		switch(s.getScrollTop()) {
-				case 1800: 
-					navHighlight('work');
-					window.location.hash = "#work";
-					break;
-				case 3150:
-					navHighlight('services');
-					window.location.hash = "#services";
-					break;
-				case 4600:
-					navHighlight('clients');
-					window.location.hash = "#clients";
-					break;
-				case 5600:
-					navHighlight('team');
-					window.location.hash = "#team";
-					break;
-				case 6800:
-					navHighlight('careers');
-					window.location.hash = "#careers";
-					break;
-				case 7100:
-					navHighlight('contact');
-					window.location.hash = "#contact";
-					break;
-			
-		}
-		*/
 		var top = s.getScrollTop();
 		if (top > 1000 && top < 2500 ) {
 				navHighlight('work');
