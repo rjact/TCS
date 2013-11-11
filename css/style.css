@@ -115,11 +115,12 @@ section#contact {
 }
 
 .overlay h3{
-	font-size:2em;
-	padding-top:2em;
+	font-size:1.5em;
+	padding-top:3em;
+	font-weight:bold;
 }
 .overlay p {
-	font-size:1.4em;
+	font-size:1em;
 }
 
 .close_lbx {
@@ -306,14 +307,16 @@ section#services div.services_example {
 	position:relative;
 }
 .services_example .front h3 {
-	margin-top:64px;
+	margin-top:60px;
 	text-align:center;
 	font-family:Montserrat;
+	font-weight:bold;
 	color:#ffffff;
 }
 .services_example .back h3 {
 	font-size:1em;
-	padding-top:0;
+	font-weight:bold;
+	padding-top:1em;;
 }
 .services_example .back p {
 	font-size:0.8em;
@@ -504,12 +507,12 @@ div#team_example_10 {
 	position:absolute;
 }
 .team_example .overlay h3 {
-	font-size:1.2em;
-	padding-top:3.4em;
+	font-size:1.5em;
+	padding-top:3em;
 }
 .team_example .overlay p {
 	font-size: 1em;
-	padding-top:1em;
+	padding-top:.2em;
 }
 /* end team section */
 
