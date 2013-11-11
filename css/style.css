@@ -18,8 +18,10 @@ nav {
 	font-family: Impact;
 	font-size:36px;
 	width:100%;
-	height:60px;
+	height:107px;
 	position:absolute;
+	background:#002b45;
+	
 	/*margin-top:40px;*/
 }
 nav ul {
@@ -34,6 +36,10 @@ nav ul li {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
+}
+nav ul li a {
+	color:#ffffff;
+	text-decoration:none;
 }
 nav ul li.active {
 	background:#1d80be;
@@ -59,7 +65,7 @@ nav div#tagline_holder div#tagline {
 /* end navigation */
 
 /* sections - general */
-div#sections {
+section {
 	width:100%;
 	max-width:1024px;
 	margin:0 auto;
@@ -87,9 +93,11 @@ section.sec {
 	max-width:1024px;
 	min-height:1000px;
 	background:#e3e3e3 url(../images/footer.jpg) no-repeat bottom center;
-	position:relative;
+	position:fixed;
 	overflow:hidden;
 	padding-bottom:100px;
+	left:0;
+	right:0;
 }
 section#contact {
 	background:#e3e3e3 url(../images/footer_tall.jpg) no-repeat bottom center;
@@ -128,10 +136,10 @@ section#contact {
 	display:none;
 }
 /* intro page */
-section#sec_home {
+section#home {
 	width:100%;
 	height:100%;
-	position:relative;
+	position:absolute;
 	background:none;
 	max-width:none;
 	padding-bottom:0;
@@ -163,7 +171,7 @@ div#intro-content h1 {
 /* end intro page */
 
 /* home page 
-section#sec_home {
+section#home {
 	background:#ffffff;
 	top:0%;
 	max-width:none;
@@ -188,23 +196,23 @@ div#intro-content h1 {
 }
 */
 /* work page */
-section#sec_work, section#sec_services, section#sec_clients, section#sec_team, section#sec_careers, section#sec_contact {
+section#work, section#services, section#clients, section#team, section#careers, section#contact {
 	height:auto;
 }
-section#sec_work .sec_header {
+section#work .sec_header {
 	background:url(../images/circle_convex.png) no-repeat center top;
 	height:26.2em;
 	background-size:contain;
 	text-align:center;
 	margin-top:-180px;
 }
-section#sec_work .sec_header h1 {
+section#work .sec_header h1 {
 	font-family: 'Montserrat', sans-serif;
 	color:#ffffff;
 	font-size:2em;
 	padding-top:6.3em;
 }
-section#sec_work .sec_header p {
+section#work .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -265,7 +273,7 @@ div#work_example_12 {
 /* end work page */
 
 /* services page */
-section#sec_services .sec_header {
+section#services .sec_header {
 	background:url(../images/circle_concave.png) no-repeat center top;
 	height:31em;
 	background-size:contain;
@@ -273,7 +281,7 @@ section#sec_services .sec_header {
 	margin-top:-180px;
 }
 
-section#sec_services .sec_header p {
+section#services .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -281,11 +289,11 @@ section#sec_services .sec_header p {
 	padding-top:6.8em;
 }
 
-section#sec_services div.services_examples {
+section#services div.services_examples {
 	text-align:center;
 	margin-top:-96px;
 }
-section#sec_services div.services_example {
+section#services div.services_example {
 	width:221px;
 	height:222px;
 	float:none;
@@ -358,7 +366,7 @@ section#sec_services div.services_example {
 /* end services section */
 
 /* clients section */
-section#sec_clients .sec_header {
+section#clients .sec_header {
 	background:url(../images/circle_convex.png) no-repeat center top;
 	height:29em;
 	background-size:contain;
@@ -366,7 +374,7 @@ section#sec_clients .sec_header {
 	margin-top:-246px;
 }
 
-section#sec_clients .sec_header p {
+section#clients .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -374,12 +382,12 @@ section#sec_clients .sec_header p {
 	padding-top:8.7em;
 }
 
-section#sec_clients div.client_examples {
+section#clients div.client_examples {
 	height: 600px;
 	position:relative;
 	margin-top:-41px;
 }
-section#sec_clients div.client_example {
+section#clients div.client_example {
 	position:absolute;
 }
 div#client_example_01 { /* z2 */
@@ -430,7 +438,7 @@ div#client_example_11 { /* abc */
 /* end clients section */
 
 /* team section */
-section#sec_team .sec_header {
+section#team .sec_header {
 	background:url(../images/circle_concave.png) no-repeat center top;
 	height:31em;
 	background-size:contain;
@@ -438,7 +446,7 @@ section#sec_team .sec_header {
 	margin-top:-13.7em;
 }
 
-section#sec_team .sec_header p {
+section#team .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -446,17 +454,18 @@ section#sec_team .sec_header p {
 	padding-top:8.1em;
 }
 
-section#sec_team div.team_examples {
+section#team div.team_examples {
 	text-align:center;
 	margin-top:-96px;
 }
-section#sec_team div.team_example {
+section#team div.team_example {
 	width:221px;
 	height:222px;
 	float:none;
 	margin:28px;
 	background-position:0 0;
 	display:inline-block;
+	position:relative;
 }
 
 div#team_example_01 {
@@ -505,7 +514,7 @@ div#team_example_10 {
 /* end team section */
 
 /* careers section  */
-section#sec_careers .sec_header {
+section#careers .sec_header {
 	background:url(../images/circle_convex.png) no-repeat center top;
 	height:29em;
 	background-size:contain;
@@ -513,7 +522,7 @@ section#sec_careers .sec_header {
 	margin-top:-246px;
 }
 
-section#sec_careers .sec_header p {
+section#careers .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -521,20 +530,20 @@ section#sec_careers .sec_header p {
 	padding-top:8.5em;
 }
 
-section#sec_careers .sec_content {
+section#careers .sec_content {
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-size:18px;
 }
-section#sec_careers .sec_content p {
+section#careers .sec_content p {
 	color:#6d6d6d;
 	line-height:27px;
 }
-section#sec_careers .sec_content ul {
+section#careers .sec_content ul {
 	padding:18px 0 9px;
 }
-section#sec_careers .sec_content ul li {
+section#careers .sec_content ul li {
 	color:#1d80be;
 	line-height:35px;
 }
@@ -543,13 +552,13 @@ section#sec_careers .sec_content ul li {
 
 
 /* contact section */
-section#sec_contact {
+section#contact {
 	font-family: 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	margin-bottom:25px;
 	background:#e3e3e3;
 }
-section#sec_contact .sec_header {
+section#contact .sec_header {
 	background:url(../images/circle_concave.png) no-repeat center top;
 	height:31em;
 	background-size:contain;
@@ -557,7 +566,7 @@ section#sec_contact .sec_header {
 	margin-top:-15em;
 }
 
-section#sec_contact .sec_header p {
+section#contact .sec_header p {
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
 	color:#ffffff;
@@ -565,7 +574,7 @@ section#sec_contact .sec_header p {
 	padding-top:8em;
 }
 
-section#sec_contact .sec_left {
+section#contact .sec_left {
 	width:29.3%;
 	margin-left:15.5%;
 	color:#1b3f54;
@@ -574,65 +583,65 @@ section#sec_contact .sec_left {
 	margin-top:-58px;
 }
 
-section#sec_contact .sec_right {
+section#contact .sec_right {
 	float:left;
 	margin-top:-58px;
 	width:426px;
 }
-section#sec_contact .sec_left address {
+section#contact .sec_left address {
 	font-style:normal;
 }
-section#sec_contact .sec_left a {
+section#contact .sec_left a {
 	color:#1b3f54;
 	text-decoration:none;
 }
-section#sec_contact .sec_left address,
-section#sec_contact .sec_left div {
+section#contact .sec_left address,
+section#contact .sec_left div {
 	padding-bottom:37px;
 }
 
-section#sec_contact .sec_right ul li {
+section#contact .sec_right ul li {
 	margin-right:10px;
 	float:left;
 	padding-bottom:2px;
 }
-section#sec_contact .sec_right ul li.half {
+section#contact .sec_right ul li.half {
 	width:201px;
 }
-section#sec_contact .sec_right ul li.three-quarters {
+section#contact .sec_right ul li.three-quarters {
 	width:309px;
 }
-section#sec_contact .sec_right ul li.one-quarter {
+section#contact .sec_right ul li.one-quarter {
 	padding-top:115px;
 }
-section#sec_contact .sec_right ul li label {
+section#contact .sec_right ul li label {
 	color:#1d80be;
 	display:block;
 }
-section#sec_contact .sec_right ul li label.required:after {
+section#contact .sec_right ul li label.required:after {
 	content: "*";
 }
 
-section#sec_contact .sec_right ul li input {
+section#contact .sec_right ul li input {
 	height:31px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	border:solid 1px #bdbebd;
 }
-section#sec_contact .sec_right ul li input[type=text] {
+section#contact .sec_right ul li input[type=text] {
 	padding:0 7px;
 }
 
-section#sec_contact .sec_right ul li.wide input {
+section#contact .sec_right ul li.wide input {
 	width:405px;
 }
 
-section#sec_contact .sec_right ul li.half input {
+section#contact .sec_right ul li.half input {
 	width:193px;
 }
 
-section#sec_contact .sec_right ul li textarea {
+section#contact .sec_right ul li textarea {
 	width:311px;
 	height:125px;
 	-webkit-border-radius: 10px;
@@ -641,7 +650,7 @@ section#sec_contact .sec_right ul li textarea {
 	border:solid 1px #bdbebd;
 }
 
-section#sec_contact .sec_right ul li input[type=submit] {
+section#contact .sec_right ul li input[type=submit] {
 	background:#1d80be;
 	font-family: 'Covered By Your Grace', cursive;
 	-webkit-font-smoothing: antialiased;
@@ -651,11 +660,15 @@ section#sec_contact .sec_right ul li input[type=submit] {
 }
 
 div.sec_footer {
-	position:absolute;
-	bottom:0px;
+	position:fixed;
+	bottom:-200px;
 	width:100%;
+	max-width:1024px;
 	background:url(../images/footer_tall.jpg) no-repeat bottom center;
 	height:140px;
+	left:0;
+	right:0;
+	margin:0 auto;
 } 
 ul#social_links {
 	float:left;

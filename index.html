@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -6,7 +6,7 @@
 <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/reset.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-	  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 	<script src="js/shapewrapper.js"></script>
 	<script>
 		document.createElement("nav");
@@ -14,117 +14,112 @@
 	</script>
 </head>
 
-<body>
+<body id="body">
 
-	<div id="page">
-		<section class="sec" id="sec_home">
+		<section class="sec" id="home" data-0="top:0%">
 			<div id="intro-content">
 			  <div id="intro-image"></div>
 			  <h1>Ideas That Make A Difference<sup><sup><sup>&trade;</sup></sup></sup></h1>
 			</div>
 		</section>
-		<nav>
+
+		<nav data-0="top:100%" data-_home--25="top:0%" style="z-index:101;position:fixed;">
 			<div id="tagline_holder">
 				<div id="tagline">Making a difference since 1999</div>
 			</div>
 			<ul class="clearfix">
 				<li class="navitem" id="nav_home" style="padding-top:7px;padding-bottom:0;"><img src="images/logo_small.png" /></li>
-				<li class="navitem" id="nav_work">Work</li>
-				<li class="navitem" id="nav_services">Services</li>
-				<li class="navitem" id="nav_clients">Clients</li>
-				<li class="navitem" id="nav_team">Team</li>
-				<li class="navitem" id="nav_careers">Careers</li>
-				<li class="navitem" id="nav_contact">Contact</li>
+				<li class="navitem" id="nav_work" data-anchor-target="#work" data-_work="background=rgb(29,128,190);" data-_services="background[end]=rgb(0,43,69);"><a href="#work" data-scroll-offset="1200">Work</a></li>
+				<li class="navitem" id="nav_services"><a href="#services"data-scroll-offset="400">Services</a></li>
+				<li class="navitem" id="nav_clients"><a href="#clients">Clients</a></li>
+				<li class="navitem" id="nav_team"><a href="#team">Team</a></li>
+				<li class="navitem" id="nav_careers"><a href="#careers">Careers</a></li>
+				<li class="navitem" id="nav_contact"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
-		<div id="sections">
-			<section class="sec" id="sec_work">
+		
+			<section class="sec" id="work" data-0="top:1800px" data-1="top:1000px;" data-_home--25="top:107px;" data-_home-800="top:107px;" data-_home-2000="top:-2000px"  data-menu-offset="-100">
 				<div class="sec_header">
 					<h1>A Marketing Agency Built to Deliver...</h1>
 					<p>Ideas powered by strategy, insights, technology and boundless<br/>creativity.  We engage, enhance and extend the dialogue<br/>between brands and consumers.</p>
 				</div>
-				<div class="work_examples clearfix">
-					<div class="example work_example" id="work_example_01" data-large="whitepages"><div class="overlay"><h3>WhitePages</h3><p>SMS LookUp Services</p></div></div>
-					<div class="example work_example" id="work_example_02" data-large="whmh"><div class="overlay"><h3>Where Happy Meets Healthy</h3><p>Social Community Generation</p></div></div>
-					<div class="example work_example" id="work_example_03" data-large="yp"><div class="overlay"><h3>YP</h3><p>App Developer Contest</p></div></div>
-					<div class="example work_example" id="work_example_04" data-large="att_disney"><div class="overlay"><h3>AT&T U-verse</h3><p>Disney Teen Beach</br>Movie Premiere</p></div></div>
-					<div class="example work_example" id="work_example_05" data-large="myatt"><div class="overlay"><h3>myAT&T</h3><p>Triple Crown</p></div></div>
-					<div class="example work_example" id="work_example_06" data-large="mobitv"><div class="overlay"><h3>MobiTV</h3><p>Trial Program</p></div></div>
-					<div class="example work_example" id="work_example_07" data-large="abctv"><div class="overlay"><h3>ABC TV</h3><p>Premiere Events</p></div></div>
-					<div class="example work_example" id="work_example_08" data-large="eppt"><div class="overlay"><h3>AT&T</h3><p>Enhanced Push-to-Talk Product Launch</p></div></div>
-					<div class="example work_example" id="work_example_09" data-large="isis"><div class="overlay"><h3>Isis Mobile</br>& AT&T</h3><p>Product Launch</p></div></div>
-					<div class="example work_example" id="work_example_10" data-large="z2"><div class="overlay"><h3>Z2</h3><p>Metal Storm: Aces</p></div></div>
-					<div class="example work_example" id="work_example_11" data-large="lavoz"><div class="overlay"><h3>AT&T Latino</h3><p>LA Voz Kids</p></div></div>
-					<div class="example work_example" id="work_example_12" data-large="attlatino"><div class="overlay"><h3>AT&T Latino</h3><p>Samsung Galaxy</br>"top secret"</p></div></div>
+				<div class="work_examples clearfix" style="position:relative;">
+					<div class="example work_example" id="work_example_01" data-_home-100="margin-top:-100px;opacity:0" data-_home-200="margin-top:30px;opacity:1" data-large="whitepages"><div class="overlay"><h3>WhitePages</h3><p>SMS LookUp Services</p></div></div>
+					<div class="example work_example" id="work_example_02" data-_home-150="margin-top:-100px;opacity:0" data-_home-250="margin-top:30px;opacity:1" data-large="whmh"><div class="overlay"><h3>Where Happy Meets Healthy</h3><p>Social Community Generation</p></div></div>
+					<div class="example work_example" id="work_example_03" data-_home-200="margin-top:-100px;opacity:0" data-_home-300="margin-top:30px;opacity:1" data-large="yp"><div class="overlay"><h3>YP</h3><p>App Developer Contest</p></div></div>
+					<div class="example work_example" id="work_example_04" data-_home-250="margin-top:-100px;opacity:0" data-_home-350="margin-top:30px;opacity:1" data-large="att_disney"><div class="overlay"><h3>AT&T U-verse</h3><p>Disney Teen Beach</br>Movie Premiere</p></div></div>
+					<div class="example work_example" id="work_example_05" data-_home-300="margin-top:-100px;opacity:0" data-_home-400="margin-top:30px;opacity:1" data-large="myatt"><div class="overlay"><h3>myAT&T</h3><p>Triple Crown</p></div></div>
+					<div class="example work_example" id="work_example_06" data-_home-350="margin-top:-100px;opacity:0" data-_home-450="margin-top:30px;opacity:1" data-large="mobitv"><div class="overlay"><h3>MobiTV</h3><p>Trial Program</p></div></div>
+					<div class="example work_example" id="work_example_07" data-_home-400="margin-top:-100px;opacity:0" data-_home-500="margin-top:30px;opacity:1" data-large="abctv"><div class="overlay"><h3>ABC TV</h3><p>Premiere Events</p></div></div>
+					<div class="example work_example" id="work_example_08" data-_home-450="margin-top:-100px;opacity:0" data-_home-550="margin-top:30px;opacity:1" data-large="eppt"><div class="overlay"><h3>AT&T</h3><p>Enhanced Push-to-Talk Product Launch</p></div></div>
+					<div class="example work_example" id="work_example_09" data-_home-500="margin-top:-100px;opacity:0" data-_home-600="margin-top:30px;opacity:1" data-large="isis"><div class="overlay"><h3>Isis Mobile</br>& AT&T</h3><p>Product Launch</p></div></div>
+					<div class="example work_example" id="work_example_10" data-_home-550="margin-top:-100px;opacity:0" data-_home-650="margin-top:30px;opacity:1" data-large="z2"><div class="overlay"><h3>Z2</h3><p>Metal Storm: Aces</p></div></div>
+					<div class="example work_example" id="work_example_11" data-_home-600="margin-top:-100px;opacity:0" data-_home-700="margin-top:30px;opacity:1" data-large="lavoz"><div class="overlay"><h3>AT&T Latino</h3><p>LA Voz Kids</p></div></div>
+					<div class="example work_example" id="work_example_12" data-_home-650="margin-top:-100px;opacity:0" data-_home-750="margin-top:30px;opacity:1" data-large="attlatino"><div class="overlay"><h3>AT&T Latino</h3><p>Samsung Galaxy</br>"top secret"</p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="sec_services">
+			<section class="sec" id="services" data-0="top:2900px" data-_work="top:1000px" data-_work-635="top:107px;" data-_work-1200="" data-_work-2300="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>"A solid strategy will keep you in the game,<br/>a BIG idea will WIN it."</p>
 				</div>
 				<div class="services_examples clearfix">
-					<div class="example services_example" id="services_example_01" data-large="yp" data-text="Establishing custom benchmarks and ROI target goals with real time reporting for each campaign. We leverage our performance tracking to capture key insights and course correct while campaigns are live. ">
-						
-						<div class="front">
-							<h3>Performance Tracking & Analytics</h3>
-						</div>
-						<div class="overlay back">
-							<h3>Performance Tracking & Analytics</h3><p>Establishing custom benchmarks and ROI target...</p><p>Read More ></p>
-						</div>
-					</div>
-					<div class="example services_example" id="services_example_02" data-large="att_disney" data-text="Creating inspirational design and copy to motivate the target to engage. Our branded engagements are optimized for each medium inclusive of web, mobile, tablet, print, OOH, experiential and radio."><div class="front"><h3>Creative</h3></div><div class="overlay back"><h3>Creative</h3><p>Creating inspirational design and copy to motivate the target to engage...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_03" data-large="attlatino" data-text="Developing and executing marketing campaigns by leveraging the adoption and usage of digital devices across online, mobile phone and tablets"><div class="front"><h3>Digital</h3></div><div class="overlay back"><h3>Digital</h3><p>Developing and executing marketing campaigns by...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_04" data-large="isis" data-text="One to One live engagements for tours, events and guerilla marketing, supported by professional brand ambassadors, wrapped vehicles, custom displays and digital technology to capture data insights."><div class="front"><h3>Experiential</h3></div><div class="overlay back"><h3>Experiential</h3><p>One to One live engagements for tours, events and guerilla marketing...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_05" data-large="z2" data-text="&quot;A solid strategy will keep you in the game, a big idea will win it.&quot; A boundless approach, grounded in strategy and insights powers our pursuit of delivering business changing ideas."><div class="front"><h3>Ideas</h3></div><div class="overlay back"><h3>Ideas</h3><p>“A solid strategy will keep you in the game, a big idea will win it.”...</p><p>Read More</p></div></div>
-					<div class="example services_example" id="services_example_06" data-large="attlatino" data-text="Partnering with Facebook Preferred Marketing Developer, CitizenNet, TCS takes a specialized approach for message creation and delivery on the world's largest social platform. Newsfeed Posts with Boosts and Right Hand Side Messaging tied to on campus Facebook Apps and Off Campus websites optimized for mobile."><div class="front"><h3>Interest Graph Marketing</h3></div><div class="overlay back"><h3>Interest Graph Marketing</h3><p>Partnering with Facebook Preferred Marketing Developer, CitizenNet, TCS takes a specialized approach...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_07" data-large="mobitv" data-text="TCS specializes in mobile phone and tablet messaging campaigns, sites and apps that are optimized per device and OS for the user."><div class="front"><h3>Mobile</h3></div><div class="overlay back"><h3>Mobile</h3><p>TCS specializes in mobile phone and tablet messaging campaigns, sites and apps...</p><p>Read More</p></div></div>
-					<div class="example services_example" id="services_example_08" data-large="myatt" data-text="TCS specializes in sweepstakes, contests, games and special offers. From concept development, execution & management, data capture, prize procurement, fulfillment to bonding, registration, official rules and legal. "><div class="front"><h3>Promotion</h3></div><div class="overlay back"><h3>Promotion</h3><p>TCS specializes in sweepstakes, contests, games and special offers...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_09" data-large="whmh" data-text="Community building & management, content creation, leveraging data and audience insights for hyper targeting within social platforms driven by paid, earned and viral messaging."><div class="front"><h3>Social Media</h3></div><div class="overlay back"><h3>Social Media</h3><p>Community building & management, content creation, leveraging data and audience insights...</p><p>Read More ></p></div></div>
-					<div class="example services_example" id="services_example_10" data-large="whitepages" data-text="Cloud based website hosting, maintenance & support, app development, Q & A testing, hosting, 3rd party API integration and media pixel tracking. "><div class="front"><h3>Technology</h3></div><div class="overlay back"><h3>Technology</h3><p>Cloud based website hosting, maintenance & support, app development, Q & A...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_01" data-_work-650="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-750="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="yp" data-text="Establishing custom benchmarks and ROI target goals with real time reporting for each campaign. We leverage our performance tracking to capture key insights and course correct while campaigns are live. "><div class="front"><h3>Performance Tracking & Analytics</h3></div><div class="overlay back"><h3>Performance Tracking & Analytics</h3><p>Establishing custom benchmarks and ROI target...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_02" data-_work-700="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-800="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="att_disney" data-text="Creating inspirational design and copy to motivate the target to engage. Our branded engagements are optimized for each medium inclusive of web, mobile, tablet, print, OOH, experiential and radio."><div class="front"><h3>Creative</h3></div><div class="overlay back"><h3>Creative</h3><p>Creating inspirational design and copy to motivate the target to engage...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_03" data-_work-750="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-850="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="attlatino" data-text="Developing and executing marketing campaigns by leveraging the adoption and usage of digital devices across online, mobile phone and tablets"><div class="front"><h3>Digital</h3></div><div class="overlay back"><h3>Digital</h3><p>Developing and executing marketing campaigns by...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_04" data-_work-800="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-900="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="isis" data-text="One to One live engagements for tours, events and guerilla marketing, supported by professional brand ambassadors, wrapped vehicles, custom displays and digital technology to capture data insights."><div class="front"><h3>Experiential</h3></div><div class="overlay back"><h3>Experiential</h3><p>One to One live engagements for tours, events and guerilla marketing...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_05" data-_work-850="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-950="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="z2" data-text="&quot;A solid strategy will keep you in the game, a big idea will win it.&quot; A boundless approach, grounded in strategy and insights powers our pursuit of delivering business changing ideas."><div class="front"><h3>Ideas</h3></div><div class="overlay back"><h3>Ideas</h3><p>“A solid strategy will keep you in the game, a big idea will win it.”...</p><p>Read More</p></div></div>
+					<div class="example services_example" id="services_example_06" data-_work-900="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-1000="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="attlatino" data-text="Partnering with Facebook Preferred Marketing Developer, CitizenNet, TCS takes a specialized approach for message creation and delivery on the world's largest social platform. Newsfeed Posts with Boosts and Right Hand Side Messaging tied to on campus Facebook Apps and Off Campus websites optimized for mobile."><div class="front"><h3>Interest Graph Marketing</h3></div><div class="overlay back"><h3>Interest Graph Marketing</h3><p>Partnering with Facebook Preferred Marketing Developer, CitizenNet, TCS takes a specialized approach...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_07" data-_work-950="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-1050="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="mobitv" data-text="TCS specializes in mobile phone and tablet messaging campaigns, sites and apps that are optimized per device and OS for the user."><div class="front"><h3>Mobile</h3></div><div class="overlay back"><h3>Mobile</h3><p>TCS specializes in mobile phone and tablet messaging campaigns, sites and apps...</p><p>Read More</p></div></div>
+					<div class="example services_example" id="services_example_08" data-_work-1000="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-1100="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="myatt" data-text="TCS specializes in sweepstakes, contests, games and special offers. From concept development, execution & management, data capture, prize procurement, fulfillment to bonding, registration, official rules and legal. "><div class="front"><h3>Promotion</h3></div><div class="overlay back"><h3>Promotion</h3><p>TCS specializes in sweepstakes, contests, games and special offers...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_09" data-_work-1050="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-1150="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="whmh" data-text="Community building & management, content creation, leveraging data and audience insights for hyper targeting within social platforms driven by paid, earned and viral messaging."><div class="front"><h3>Social Media</h3></div><div class="overlay back"><h3>Social Media</h3><p>Community building & management, content creation, leveraging data and audience insights...</p><p>Read More ></p></div></div>
+					<div class="example services_example" id="services_example_10" data-_work-1100="transform:matrix(1,0,0,-.5,0,-100);opacity:0" data-_work-1200="transform:matrix(1,0,0,1,0,0);opacity:1" data-large="whitepages" data-text="Cloud based website hosting, maintenance & support, app development, Q & A testing, hosting, 3rd party API integration and media pixel tracking. "><div class="front"><h3>Technology</h3></div><div class="overlay back"><h3>Technology</h3><p>Cloud based website hosting, maintenance & support, app development, Q & A...</p><p>Read More ></p></div></div>
 				</div>
 
 			</section>
-			<section class="sec" id="sec_clients">
+
+			<section class="sec" id="clients" data-0="top:4300px" data-_services-450="top:1000px" data-_services-950="top:107px;" data-_services-1600="" data-_services-2500="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Some of our clients that have seen the difference</p>
 				</div>
 				<div class="client_examples">
-					<div class="example client_example" id="client_example_01"><img src="images/clients/z2.png" width="91" height="91" /></div>
-					<div class="example client_example" id="client_example_02"><img src="images/clients/white-pages.png" width="223" height="106" /></div>
-					<div class="example client_example" id="client_example_03"><img src="images/clients/fx.png" width="180" height="98" /></div>
-					<div class="example client_example" id="client_example_04"><img src="images/clients/espn.png" width="93" height="94" /></div>
-					<div class="example client_example" id="client_example_05"><img src="images/clients/nascar.png" width="296" height="52" /></div>
-					<div class="example client_example" id="client_example_06"><img src="images/clients/disney.png" width="97" height="98" /></div>
-					<div class="example client_example" id="client_example_07"><img src="images/clients/att.png" width="72" height="73" /></div>
-					<div class="example client_example" id="client_example_08"><img src="images/clients/mobitv.png" width="263" height="102" /></div>
-					<div class="example client_example" id="client_example_09"><img src="images/clients/fox.png" width="198" height="85" /></div>
-					<div class="example client_example" id="client_example_10"><img src="images/clients/att-uverse.png" width="286" height="33" /></div>
-					<div class="example client_example" id="client_example_11"><img src="images/clients/abc.png" width="99" height="100" /></div>
+					<div class="example client_example" id="client_example_01" data-_services-800="margin-left:1000px" data-_services-900="margin-left:0px"><img src="images/clients/z2.png" width="91" height="91" /></div>
+					<div class="example client_example" id="client_example_02" data-_services-850="margin-left:1000px" data-_services-950="margin-left:0px"><img src="images/clients/white-pages.png" width="223" height="106" /></div>
+					<div class="example client_example" id="client_example_03" data-_services-900="margin-left:1000px" data-_services-1000="margin-left:0px"><img src="images/clients/fx.png" width="180" height="98" /></div>
+					<div class="example client_example" id="client_example_04" data-_services-950="margin-left:1000px" data-_services-1050="margin-left:0px"><img src="images/clients/espn.png" width="93" height="94" /></div>
+					<div class="example client_example" id="client_example_05" data-_services-1000="margin-left:1000px" data-_services-1100="margin-left:0px"><img src="images/clients/nascar.png" width="296" height="52" /></div>
+					<div class="example client_example" id="client_example_06" data-_services-1050="margin-left:1000px" data-_services-1150="margin-left:0px"><img src="images/clients/disney.png" width="97" height="98" /></div>
+					<div class="example client_example" id="client_example_07" data-_services-1100="margin-left:1000px" data-_services-1200="margin-left:0px"><img src="images/clients/att.png" width="72" height="73" /></div>
+					<div class="example client_example" id="client_example_08" data-_services-1150="margin-left:1000px" data-_services-1250="margin-left:0px"><img src="images/clients/mobitv.png" width="263" height="102" /></div>
+					<div class="example client_example" id="client_example_09" data-_services-1200="margin-left:1000px" data-_services-1300="margin-left:0px"><img src="images/clients/fox.png" width="198" height="85" /></div>
+					<div class="example client_example" id="client_example_10" data-_services-1250="margin-left:1000px" data-_services-1350="margin-left:0px"><img src="images/clients/att-uverse.png" width="286" height="33" /></div>
+					<div class="example client_example" id="client_example_11" data-_services-1300="margin-left:1000px" data-_services-1400="margin-left:0px"><img src="images/clients/abc.png" width="99" height="100" /></div>
 				</div>
 					
 			</section>
-			<section class="sec" id="sec_team">
+
+			<section class="sec" id="team" data-0="top:5500px" data-_clients-650="top:1000px" data-_clients-950="top:107px;" data-_clients-1600="" data-_clients-2600="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>The Team That Makes a Difference</p>
 				</div>
 				<div class="team_examples clearfix">
-					<div class="example team_example" id="team_example_01" data-large="stephenJ"><div class="overlay"><h3>Stephen J. O'Shea</h3><p>President &amp; Founder</p></div></div>
-					<div class="example team_example" id="team_example_02" data-large="joeP"><div class="overlay"><h3>Joe Petrosino</h3><p>Group Director</p></div></div>
-					<div class="example team_example" id="team_example_03" data-large="tracyG"><div class="overlay"><h3>Tracy Gagliardi</h3><p>Director of Execution Strategies</p></div></div>
-					<div class="example team_example" id="team_example_04" data-large="stephenM"><div class="overlay"><h3>Stephen Macklin</h3><p>Director of Creative Services</p></div></div>
-					<div class="example team_example" id="team_example_05" data-large="jakeP"><div class="overlay"><h3>Jake Pavel</h3><p>Diretor of Digital Services</p></div></div>
-					<div class="example team_example" id="team_example_06" data-large="tatianaD"><div class="overlay"><h3>Tatiana Doroshenko</h3><p>Senior Project Manager</p></div></div>
-					<div class="example team_example" id="team_example_07" data-large="paolaS"><div class="overlay"><h3>Paola Sierra</h3><p>Project Manager</p></div></div>
-					<div class="example team_example" id="team_example_08" data-large="ericB"><div class="overlay"><h3>Eric Bailey</h3><p>Project Manager</p></div></div>
-					<div class="example team_example" id="team_example_09" data-large="patrickF"><div class="overlay"><h3>Patrick F</h3><p></p></div></div>
-					<div class="example team_example" id="team_example_10" data-large="jasonS"><div class="overlay"><h3>Jason S</h3><p></p></div></div>
+					<div class="example team_example" id="team_example_01" data-_clients-1000="top:500px" data-_clients-1100="top:0px;" data-large="stephenJ"><div class="overlay"><h3>Stephen J. O'Shea</h3><p>President &amp; Founder</p></div></div>
+					<div class="example team_example" id="team_example_02" data-_clients-1050="top:500px" data-_clients-1150="top:0px;"  data-large="joeP"><div class="overlay"><h3>Joe Petrosino</h3><p>Group Director</p></div></div>
+					<div class="example team_example" id="team_example_03" data-_clients-1100="top:500px" data-_clients-1200="top:0px;"  data-large="tracyG"><div class="overlay"><h3>Tracy Gagliardi</h3><p>Director of Execution Strategies</p></div></div>
+					<div class="example team_example" id="team_example_04" data-_clients-1150="top:500px" data-_clients-1250="top:0px;" data-large="stephenM"><div class="overlay"><h3>Stephen Macklin</h3><p>Director of Creative Services</p></div></div>
+					<div class="example team_example" id="team_example_05" data-_clients-1200="top:500px" data-_clients-1300="top:0px;"  data-large="jakeP"><div class="overlay"><h3>Jake Pavel</h3><p>Diretor of Digital Services</p></div></div>
+					<div class="example team_example" id="team_example_06" data-_clients-1250="top:500px" data-_clients-1350="top:0px;" data-large="tatianaD"><div class="overlay"><h3>Tatiana Doroshenko</h3><p>Senior Project Manager</p></div></div>
+					<div class="example team_example" id="team_example_07" data-_clients-1300="top:500px" data-_clients-1400="top:0px;"  data-large="paolaS"><div class="overlay"><h3>Paola Sierra</h3><p>Project Manager</p></div></div>
+					<div class="example team_example" id="team_example_08" data-_clients-1350="top:500px" data-_clients-1450="top:0px;" data-large="ericB"><div class="overlay"><h3>Eric Bailey</h3><p>Project Manager</p></div></div>
+					<div class="example team_example" id="team_example_09" data-_clients-1400="top:500px" data-_clients-1500="top:0px;"  data-large="patrickF"><div class="overlay"><h3>Patrick F</h3><p></p></div></div>
+					<div class="example team_example" id="team_example_10" data-_clients-1450="top:500px" data-_clients-1550="top:0px;" data-large="jasonS"><div class="overlay"><h3>Jason S</h3><p></p></div></div>
 				</div>
 			</section>
-			<section class="sec" id="sec_careers">
+			
+			<section class="sec" id="careers" data-0="top:6800px" data-_team-825="top:1000px" data-_team-1250="top:107px;" data-_team-1800="" data-_team-2400="top:-2000px" data-menu-offset="-100">
 				<div class="sec_header">
 					<p>Do you have what it takes to make a difference?</p>
 				</div>
-				<div class="sec_content">
+				<div class="sec_content" data-_team="opacity:0;" data-_team-1250="opacity:0" data-_team-1800="opacity:1;">
 					<p>We are always on the look-out for Idea Believers, people who want to make a<br/>difference in the place that they spend the majority of their work day in as well as<br/>with the creation and output of work for clients.</p>
 					<ul id="openings">
 						<li>Programmers</li>
@@ -136,11 +131,12 @@
 					<p>Send us an email with your Resume, portfolio or samples of work.  Let's talk</p>
 				</div>
 			</section>
-			<section class="sec" id="sec_contact">
-				<div class="sec_header">
+
+			<section class="sec" id="contact" data-0="top:7200px" data-_careers-825="top:1000px" data-_careers-1050="top:107px;" data-menu-offset="-100" data-menu-offset="-100">
+				<div class="sec_header" >
 					<p>Let us make a difference for you</p>
 				</div>
-				<div class="sec_left sec_col">
+				<div class="sec_left sec_col" data-0="transform:translate(0px, 1000px)" data-_careers-875="transform:translate(0px, 1000px);" data-_careers-1050="transform:translate(0px, 0px);">
 					<address>
 						165 Kings Highway North<br />
 						Westport, CT 06880<br />
@@ -153,7 +149,7 @@
 						<a href="mailto:info@tcspromo.com">info@tcspromo.com</a>
 					</div>
 				</div>
-				<div class="sec_right sec_col">
+				<div class="sec_right sec_col" data-0="transform:translate(0px, 1000px)" data-_careers-925="transform:translate(0px, 1000px);" data-_careers-1100="transform:translate(0px, 0px);">
 					<ul>
 						<li class="wide">
 							<label for="Name" class="required">Name</label>
@@ -180,7 +176,9 @@
 						</li>
 					</ul>
 				</div>
-				<div class="sec_footer">
+			</section>
+
+				<div class="sec_footer" data-0="bottom:-200px;" data-_careers-925="bottom:-200px;" data-_careers-1100="bottom:0px;">
 					<ul id="social_links">
 						<li><a href="#" target="_blank"><img src="images/twitter.png" width="39" height="38"  /></a></li>
 						<li><a href="#" target="_blank"><img src="images/facebook.png" width="39" height="38" /></a></li>
@@ -192,19 +190,60 @@
 						<li><a href="#" target="_blank"><img src="images/mma.png" width="116" height="44" alt="Mobile Marketing Association" /></a></li>
 					</ul>
 				</div>
-			</section>
-			<section class="extra" id="sec_extra" style="height:1000px;">
-				&nbsp;
-			</section>
-		</div>
-	<div style="height:25px;">&nbsp;</div>
-	</div>
 	<div id="overlay">&nbsp;</div>
 	
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.0/TweenMax.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/plugins/ScrollToPlugin.min.js"></script>
-  <script src="js/jquery.superscrollorama.js"></script>
   <script src="js/index.js"></script>
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+	var s = skrollr.init({
+		constants: {
+			home:1000,
+			work: 2000,
+			services: 3000,
+			clients: 4000,
+			team: 5000,
+			careers: 6000,
+			contact: 7000
+		}
+	});
+	skrollr.menu.init(s, {
+		//skrollr will smoothly animate to the new position using `animateTo`.
+		animate: true,
+		offset: 400	
+	});
+
+  $(function(){
+    $(window).scroll(function() {
+		var top = s.getScrollTop();
+		if (top > 1000 && top < 2500 ) {
+				navHighlight('work');
+				history.pushState(null, null, '#work')
+		} else if (top > 2500 && top < 3850) {
+				navHighlight('services');
+				history.pushState(null, null, '#services')
+		} else if (top > 3850 && top < 4900) {
+				navHighlight('clients');
+				history.pushState(null, null, '#clients')
+		} else if (top > 4900 && top < 6200) {
+				navHighlight('team');
+				history.pushState(null, null, '#team')
+		} else if (top > 6200 && top < 7000) {
+				navHighlight('careers');
+				history.pushState(null, null, '#careers')
+		} else {
+				navHighlight('contact');
+				history.pushState(null, null, '#contact')
+		}
+	});
+  });
+</script>	
 
 </body>
 </html>
