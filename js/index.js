@@ -1,6 +1,7 @@
 
 var PIN_DURATION = 2000
 $(document).ready(function () {
+			setScrollWatcher();
 	$(document).scrollTop(0);
 	tlIntro = new TimelineLite();
 	tlIntro.delay(1).append([
@@ -20,7 +21,6 @@ $(document).ready(function () {
 					$('#nav_'+hash).click();
 				}
 			}
-			setScrollWatcher();
 		})
 		]);
 	skrollr.menu.init(s, {
@@ -172,7 +172,9 @@ jQuery.fn.center = function () {
 function setScrollWatcher() {
 	   $(window).scroll(function() {
 		var top = s.getScrollTop();
-		if (top > 1000 && top < 2500 ) {
+		if (top < 1000) {
+			//don't do anything 
+		} else if (top > 1000 && top < 2500 ) {
 				navHighlight('work');
 				history.pushState(null, null, '#work')
 		} else if (top > 2500 && top < 3850) {
